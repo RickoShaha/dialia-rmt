@@ -1,0 +1,175 @@
+        <!-- Heroslider Area -->
+        <div class="heroslider-area" data-black-overlay="3">
+
+            <!-- Heroslider Slider -->
+            <div class="heroslider-slider heroslider-animated tm-slider-dots tm-slider-dots-left section-wrapper-{{section.id}}">
+            {% for block in section.blocks %}
+                {% case block.type %}
+                    {% when 'slider' %}
+                                        <!-- Heroslider Single -->
+                <div class="heroslider-singleslider d-flex align-items-center tm-rippple-active block-wrapper-{{block.id}}" data-bgimage="{{ block.settings.image | img_url: 'master'}}"
+                    data-white-overlay="7">
+                    <div class="container">
+                        <div class="row align-items-center">
+                            <div class="col-lg-7 col-md-6 col-12">
+                                <div class="heroslider-content">
+                                    {% if block.settings.enable_heading ==  true %}
+                                        <{{block.settings.heading_size}} style="color:{{block.settings.heading_color}}">{{block.settings.heading_text}}</{{block.settings.heading_size}}>    
+                                    {% endif %}
+                                    {% if block.settings.enable_paragraph == true %}
+                                        <p style="font-size:{{block.settings.paragraph_text_size}}px; color:{{block.settings.paragraph_text_color}}">{{block.settings.paragraph_text}}</p>
+                                    {% endif %}
+                                    {% if block.settings.enable_btn == true %}
+                                        <a href="{{block.settings.btn_link}}" class="tm-button" style="background:{{block.settings.btn_bg_color}}; color: {{block.settings.btn_text_color}}; ">{{block.settings.btn_text}}</a>    
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--// Heroslider Single -->
+                        
+                {% endcase %}
+            {% endfor %}
+
+
+            </div>
+            <!--// Heroslider Slider -->
+
+        </div>
+        <!--// Heroslider Area -->
+
+        {% schema %}
+            {
+                "name": "Slider",
+                "settings": [
+                    
+                ],
+                "blocks" : [
+                   {
+                    "type":"slider",
+                    "name": "Slider",
+                    "settings": [
+                        {
+                            "type": "image_picker",
+                            "id": "image",
+                            "label": "Slider Image"
+                        },
+                        {
+                            "type": "header",
+                            "content": "Heading"
+                        },
+                        {
+                            "type": "checkbox",
+                            "id": "enable_heading",
+                            "label": "Add Heading",
+                            "default": true
+                        },
+                        {
+                            "type": "richtext",
+                            "id": "heading_text",
+                            "label": "Heading Text",
+                            "default": "<p></p>"
+                        },
+                        {
+                            "type": "select",
+                            "id": "heading_size",
+                            "label": "Heading Size",
+                            "options": [
+                                {
+                                    "value": "h1",
+                                    "label": "Big"
+                                },
+                                {
+                                    "value": "h2",
+                                    "label": "Medium"
+                                },
+                                {
+                                    "value": "h3",
+                                    "label": "Small"
+                                }
+                            ],
+                            "default": "h1"
+                        },
+                        {
+                            "type": "color",
+                            "id": "heading_color",
+                            "label": "Heading Font Color"
+                        },
+                        {
+                            "type": "header",
+                            "content": "Paragraph"
+                        },
+                        {
+                            "type": "checkbox",
+                            "id": "enable_paragraph",
+                            "label": "Add Paragraph",
+                            "default": false
+                        },
+                        {
+                            "type": "richtext",
+                            "id": "paragraph_text",
+                            "label": "Paragraph Text",
+                            "default": "<p></p>"
+                        },
+                        {
+                            "type": "range",
+                            "id": "paragraph_text_size",
+                            "min": 10,
+                            "max": 25,
+                            "step": 1,
+                            "unit": "px",
+                            "label": "Paragraph Font Size",
+                            "default": 14
+                        },
+                        {
+                            "type": "color",
+                            "id": "paragraph_text_color",
+                            "label": "Paragraph Font Color"
+                        },
+                        {
+                            "type": "header",
+                            "content": "Button"
+                        },
+                        {
+                            "type": "checkbox",
+                            "id": "enable_btn",
+                            "label": "Add Button",
+                            "default": true,
+                            "info": "Check here to enable button"
+                        },
+                        {
+                            "type": "color",
+                            "id": "btn_bg_color",
+                            "label": "Button Background Color"
+                        },
+                        {
+                            "type": "text",
+                            "id": "btn_text",
+                            "label": "Button Label",
+                            "placeholder": "Button Label"
+                        },
+                        {
+                            "type": "color",
+                            "id": "btn_text_color",
+                            "label": "Button Font Color"
+                        },
+                        {
+                            "type": "url",
+                            "id": "btn_link",
+                            "label": "Button Redirect Link",
+                            "default": "/"
+                        }
+                    ]
+                    }
+                ],
+                "default" : {
+                    "blocks" : [
+                        {
+                            "type" : "slider"
+                        }
+                    ]
+                } 
+            }
+        {% endschema %}
+        

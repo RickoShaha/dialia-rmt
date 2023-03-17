@@ -1,0 +1,95 @@
+
+
+    <!-- Header Bottom Area -->
+    <div class="header-bottomarea">
+        <div class="container">
+            <div class="header-bottominner">
+                <div class="header-logo">
+                    <a href="/" style="display: block; max-width: px; max-height: {{settings.logo_width}}px">
+                        {%- if settings.logo != blank -%}
+                            {%- assign logo_alt = settings.logo.alt | default: shop.name | escape -%}
+                            {%- assign logo_height = settings.logo_width | divided_by: settings.logo.aspect_ratio -%}
+                            {{ settings.logo | image_url: width: 500 | image_tag:
+                              class: 'header__heading-logo motion-reduce',
+                              widths: '50, 100, 150, 200, 250, 300, 400, 500',
+                              height: logo_height,
+                              width: settings.logo_width,
+                              alt: logo_alt
+                            }}
+                          {%- else -%}
+                            <span class="h2">{{ shop.name }}</span>
+                          {%- endif -%}
+                    </a>
+                </div>
+                <nav class="tm-navigation">
+                    <ul>
+                        {% for link in section.settings.menu.links %}
+                          {% if link.links != blank %}
+                            <li class="tm-navigation-dropdown">
+                                <a href="{{ link.url }}">{{ link.title }}<i class="fa-solid fa-angle-down"></i></a>
+                                <ul>
+                                  {% for sublink in linklists[link.handle].links %}
+                                    {% if sublink.links != blank %}
+                                        <li>
+                                            <a href="{{ sublink.url }}"> {{sublink.title}}<i class="fa-solid fa-angle-down"></i>
+                                                <ul>
+                                                    {% for sublink2 in linklists[sublink.handle].links %}
+                                                        <li><a href="{{sublink2.url}}">{{sublink2.title}}</a></li>
+                                                    {% endfor %}
+                                                </ul>
+                                            </a>
+                                        </li>
+                                        {% else %}
+                                        <li>
+                                            <a href="{{ sublink.url }}">
+                                              {{ sublink.title }}
+                                            </a>
+                                        </li>
+                                    {% endif %}
+                                  {% endfor %}
+                                </ul>
+                            </li>
+                          {% else %}
+                            <li>
+                              <a href="{{ link.url }}"> {{ link.title }}</a>
+                            </li>
+                          {% endif %}
+                        {% endfor %}
+                      </ul>
+                </nav>
+                <div class="header-icons">
+                    <ul>
+                        <li><a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
+                        <li><a href="#" class="header-searchtrigger"><i class="fa-solid fa-magnifying-glass"></i></a></li>
+                    </ul>
+                </div>
+                <div class="header-searchbox">
+                    <div class="header-searchinner">
+                        <form action="#" class="header-searchform">
+                            <input type="text" placeholder="Enter search keyword..">
+                        </form>
+                        <button class="search-close"><i class="fa-solid fa-xmark"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div class="header-mobilemenu clearfix">
+                <div class="tm-mobilenav"></div>
+            </div>
+        </div>
+    </div>
+    <!--// Header Bottom Area -->
+
+    {% schema %}
+        {
+            "name": "Header",
+            "settings": [
+                {
+                    "type": "link_list",
+                    "id": "menu",
+                    "default": "main-menu",
+                    "label": "Menu"
+                }
+            ]
+        }
+    {% endschema %}
+    

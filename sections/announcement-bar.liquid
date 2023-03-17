@@ -1,0 +1,117 @@
+    <!-- Header Top Area -->
+    <div class="section-wrapper-{{section.id}}">
+        {% for block in section.blocks %}
+            <div class="block-wrapper-{{block.id}}">
+                <div class="header-toparea" style="background-color: {{block.settings.bg_color}}; color: {{block.settings.text_color}} ">
+                    <div class="container">
+                        <div class="row align-items-center">
+                            <div class="col-md-7 col-sm-6 col-12">
+                                <div class="header-topinfo">
+                                    <ul>
+                                        <li>Email us : <a href="mailto://{{block.settings.e-mail}}">{{block.settings.e-mail}}</a></li>
+                                        <li>Call us : <a href="tel://{{block.settings.phone}}">{{block.settings.phone}}</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            {% if block.settings.add_btn == true %}
+                                <div class="col-md-5 col-sm-6 col-12">
+                                    <div class="header-topbutton">
+                                        <a href="{{block.settings.button_link}}" class="tm-button tm-button-white" style="background-color:{{block.settings.btn_bg_color}};color:{{block.settings.btn_text_color}}">{{block.settings.btn_text}}</a>
+                                    </div>
+                                </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+    {% endfor %}
+
+    <!--// Header Top Area -->
+
+    {% schema %}
+    {
+      "name": "Announcement Bar",
+      "max_blocks": 12,
+      "settings" : [
+      ],
+      "blocks": [
+        {
+          "type": "announcement",
+          "name": "Announcement Bar",
+          "settings": [
+            {
+                "type": "header",
+                "content": "Announcement Bar Background Color & Text Color"
+            },
+            {
+                "type": "color",
+                "id": "bg_color",
+                "label": "Background Color"
+              },
+              {
+                "type": "color",
+                "id": "text_color",
+                "label": "Color"
+              },
+            {
+                "type": "header",
+                "content": "E-mail & Phone"
+            },
+            {
+              "type": "text",
+              "id": "e-mail",
+              "label": "E-mail",
+              "default": "contact@example.com"
+            },
+            {
+                "type": "text",
+                "id": "phone",
+                "label": "Phone",
+                "default": "+1-800-915-6270"
+            },
+            {
+                "type": "header",
+                "content": "Button Settings"
+            },
+            {
+                "type": "checkbox",
+                "id": "add_btn",
+                "label": "Add Button",
+                "info": "Check this to enable button",
+                "default": true
+            },
+            {
+                "type": "text",
+                "id": "btn_text",
+                "label": "Button Text",
+                "default": "Book An Appoinment"
+            },
+            {
+                "type": "color",
+                "id": "btn_bg_color",
+                "label": "Button Background Color"
+            },
+            {
+                "type": "color",
+                "id": "btn_text_color",
+                "label": "Button Text Color"
+            },
+            {
+                "type": "url",
+                "id": "button_link",
+                "label": "Button link",
+                "default": "/"
+             }              
+          ]
+        }
+      ],
+      "default": {
+        "blocks": [
+          {
+            "type": "announcement"
+          }
+        ]
+      }
+    }
+    {% endschema %}
