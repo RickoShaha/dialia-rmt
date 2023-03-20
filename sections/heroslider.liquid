@@ -10,9 +10,9 @@
                 <div class="heroslider-singleslider d-flex align-items-center tm-rippple-active block-wrapper-{{block.id}}" data-bgimage="{{ block.settings.image | img_url: 'master' }}"
                     data-white-overlay="7">
                     <div class="container">
-                        <div class="row align-items-center">
+                        <div class="row align-items-center {{block.settings.blocks_alignment}}">
                             <div class="col-lg-7 col-md-6 col-12">
-                                <div class="heroslider-content">
+                                <div class="heroslider-content {{block.settings.text_alignment}}">
                                     {% if block.settings.enable_heading ==  true %}
                                         <{{ block.settings.heading_size }} style="color:{{ block.settings.heading_color }}">{{block.settings.heading_text}}</{{block.settings.heading_size}}>    
                                     {% endif %}
@@ -158,6 +158,52 @@
                             "id": "btn_link",
                             "label": "Button Redirect Link",
                             "default": "/"
+                        },
+                        {
+                            "type": "header",
+                            "content": "Alignment"
+                        },
+                        {
+                            "type": "select",
+                            "id": "blocks_alignment",
+                            "label": "Blocks Alignment",
+                            "options": [
+                                {
+                                "value": "",
+                                "label": "Left"
+                                },
+                                {
+                                "value": "justify-content-center",
+                                "label": "Center"
+                                },
+                                {
+                                "value": "justify-content-end",
+                                "label": "Right"
+                                }
+                            ],
+                            "default": "",
+                            "info": "Select where Heading, Paragraph and Buttons should apppear"
+                        },
+                        {
+                            "type": "select",
+                            "id": "text_alignment",
+                            "label": "Blocks Alignment",
+                            "options": [
+                                {
+                                "value": "",
+                                "label": "Left"
+                                },
+                                {
+                                "value": "text-center",
+                                "label": "Center"
+                                },
+                                {
+                                "value": "text-right",
+                                "label": "Right"
+                                }
+                            ],
+                            "default": "",
+                            "info": "Select how Heading, Paragraph and Buttons should align"
                         }
                     ]
                     }
