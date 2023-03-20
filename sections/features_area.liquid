@@ -1,0 +1,131 @@
+<div class="section-wrapper-{{section.id}}">
+    <!-- Features Area -->
+    <div class="tm-section features-area bg-white tm-padding-section">
+        <div class="container">
+            <div class="row justify-content-center mt-30-reverse">
+                {% for block in section.blocks %}
+                    <!-- Single Feature -->
+                    <div class="block-wrapper-{{block.id}}">
+                        <div class="col-lg-4 col-md-6 col-12 mt-30">
+                            <div class="tm-feature text-center wow fadeInUp">
+                                <span class="tm-feature-icon">
+                                    {{ block.settings.image | img_url: '60' |  img_tag}}
+                                </span>
+                                <span class="tm-feature-backicon">
+                                    {{ block.settings.image | img_url: '160' |  img_tag }}
+                                </span>
+                                {% if block.settings.enable_heading ==  true %}
+                                    <{{ block.settings.heading_size }} style="color:{{ block.settings.heading_color }}">{{block.settings.heading_text}}</{{block.settings.heading_size}}>    
+                                {% endif %}
+                                {% if block.settings.enable_paragraph == true %}
+                                    <p style="font-size:{{block.settings.paragraph_text_size}}px; color:{{block.settings.paragraph_text_color}}">{{block.settings.paragraph_text}}</p>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                    <!--// Single Feature -->
+                {% endfor %}
+
+            </div>
+        </div>
+    </div>
+    <!--// Features Area -->
+</div>    
+
+{% schema %}
+    {
+        "name": "Features",
+        "settings": [
+            
+        ],
+        "blocks" : [
+            {
+                "type": "feature_block",
+                "name": "Feature Block",
+                "settings": [
+                    {
+                        "type": "image_picker",
+                        "id": "image",
+                        "label": "Icon"
+                    },
+                    {
+                        "type": "header",
+                        "content": "Header"
+                    },
+                    {
+                        "type": "checkbox",
+                        "id": "enable_heading",
+                        "label": "Add Heading",
+                        "default": true
+                    },
+                    {
+                        "type": "text",
+                        "id": "heading_text",
+                        "label": "Heading Text"
+                    },
+                    {
+                        "type": "select",
+                        "id": "heading_size",
+                        "label": "Heading Size",
+                        "options": [
+                            {
+                                "value": "h3",
+                                "label": "Medium"
+                            },
+                            {
+                                "value": "h4",
+                                "label": "Small"
+                            },
+                            {
+                                "value": "h5",
+                                "label": "Very Small"
+                            }
+                        ],
+                        "default": "h5"
+                    },
+                    {
+                        "type": "color",
+                        "id": "heading_color",
+                        "label": "Heading Font Color"
+                    },
+                    {
+                        "type": "header",
+                        "content": "Paragraph"
+                    },
+                    {
+                        "type": "checkbox",
+                        "id": "enable_paragraph",
+                        "label": "Add Paragraph",
+                        "default": true
+                    },
+                    {
+                        "type": "richtext",
+                        "id": "paragraph_text",
+                        "label": "Paragraph Text",
+                        "default": "<p></p>"
+                    },
+                    {
+                        "type": "range",
+                        "id": "paragraph_text_size",
+                        "min": 10,
+                        "max": 25,
+                        "step": 1,
+                        "unit": "px",
+                        "label": "Paragraph Font Size",
+                        "default": 14
+                    },
+                    {
+                        "type": "color",
+                        "id": "paragraph_text_color",
+                        "label": "Paragraph Font Color"
+                    }
+                ]
+            }
+        ],
+        "presets": [
+            {
+              "name": "Features"
+            }
+          ]
+    }
+{% endschema %}
