@@ -1,6 +1,45 @@
 {
-    "current": "Default",
-    "presets": {
-      "Default": { }
+  "current": {
+    "logo": "shopify:\/\/shop_images\/logo.png",
+    "favicon": "shopify:\/\/shop_images\/favicon.png",
+    "sections": {
+      "announcement-bar": {
+        "type": "announcement-bar",
+        "blocks": {
+          "announcement-bar-0": {
+            "type": "announcement",
+            "settings": {
+              "bg_color": "",
+              "text_color": "",
+              "e-mail": "contact@example.com",
+              "phone": "+1-800-915-6270",
+              "add_btn": true,
+              "btn_text": "Book An Appoinment",
+              "btn_bg_color": "",
+              "btn_text_color": "",
+              "button_link": "\/"
+            }
+          }
+        },
+        "block_order": [
+          "announcement-bar-0"
+        ],
+        "settings": {
+        }
+      },
+      "header": {
+        "type": "header",
+        "settings": {
+          "menu": "main-menu"
+        }
+      }
+    },
+    "content_for_index": [
+
+    ]
+  },
+  "presets": {
+    "Default": {
     }
   }
+}
