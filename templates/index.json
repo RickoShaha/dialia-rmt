@@ -1,10 +1,36 @@
 {
-    "sections": {
-        "heroslider" : {
-            "type": "heroslider"
+  "sections": {
+    "heroslider": {
+      "type": "heroslider",
+      "blocks": {
+        "449cdb47-d916-4a29-a069-a4374d973a3c": {
+          "type": "slider",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/bg-image-1.jpg",
+            "enable_heading": true,
+            "heading_text": "Pain makes People change",
+            "heading_size": "h1",
+            "heading_color": "",
+            "enable_paragraph": true,
+            "paragraph_text": "<p>Massage has a positive effect on every medical condition we have looked at massage is to work and act on the body with pressure.<\/p>",
+            "paragraph_text_size": 14,
+            "paragraph_text_color": "",
+            "enable_btn": true,
+            "btn_bg_color": "",
+            "btn_text": "",
+            "btn_text_color": "",
+            "btn_link": "\/"
+          }
         }
-    },
-    "order": [
-        "heroslider"
-    ]
+      },
+      "block_order": [
+        "449cdb47-d916-4a29-a069-a4374d973a3c"
+      ],
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "heroslider"
+  ]
 }
