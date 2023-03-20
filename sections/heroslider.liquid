@@ -7,14 +7,14 @@
                 {% case block.type %}
                     {% when 'slider' %}
                                         <!-- Heroslider Single -->
-                <div class="heroslider-singleslider d-flex align-items-center tm-rippple-active block-wrapper-{{block.id}}" data-bgimage="{{ block.settings.image | img_url: 'master'}}"
+                <div class="heroslider-singleslider d-flex align-items-center tm-rippple-active block-wrapper-{{block.id}}" data-bgimage="{{ block.settings.image | img_url: 'master' }}"
                     data-white-overlay="7">
                     <div class="container">
                         <div class="row align-items-center">
                             <div class="col-lg-7 col-md-6 col-12">
                                 <div class="heroslider-content">
                                     {% if block.settings.enable_heading ==  true %}
-                                        <{{block.settings.heading_size}} style="color:{{block.settings.heading_color}}">{{block.settings.heading_text}}</{{block.settings.heading_size}}>    
+                                        <{{ block.settings.heading_size }} style="color:{{ block.settings.heading_color }}">{{block.settings.heading_text}}</{{block.settings.heading_size}}>    
                                     {% endif %}
                                     {% if block.settings.enable_paragraph == true %}
                                         <p style="font-size:{{block.settings.paragraph_text_size}}px; color:{{block.settings.paragraph_text_color}}">{{block.settings.paragraph_text}}</p>
@@ -41,7 +41,7 @@
 
         {% schema %}
             {
-                "name": "Slider",
+                "name": "Heroslider",
                 "settings": [
                     
                 ],
@@ -66,10 +66,9 @@
                             "default": true
                         },
                         {
-                            "type": "richtext",
+                            "type": "text",
                             "id": "heading_text",
-                            "label": "Heading Text",
-                            "default": "<p></p>"
+                            "label": "Heading Text"
                         },
                         {
                             "type": "select",
@@ -104,7 +103,7 @@
                             "type": "checkbox",
                             "id": "enable_paragraph",
                             "label": "Add Paragraph",
-                            "default": false
+                            "default": true
                         },
                         {
                             "type": "richtext",
