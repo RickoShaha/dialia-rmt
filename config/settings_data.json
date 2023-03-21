@@ -32,6 +32,62 @@
         "settings": {
           "menu": "main-menu"
         }
+      },
+      "footer": {
+        "type": "footer",
+        "blocks": {
+          "37e2927b-2b5b-4e54-9f34-502ff4caaa48": {
+            "type": "get_in_touch",
+            "settings": {
+              "enable_address": true,
+              "address_text": "2726 Avenue Papineau Montreal, QC, Canada",
+              "address_color": "",
+              "enable_phone": true,
+              "phone_text": "1-800-915-6270",
+              "phone_color": "",
+              "enable_email": true,
+              "email_text": "info@example.com",
+              "email_color": "",
+              "twitter": true,
+              "facebook": true,
+              "pinterest": true,
+              "linkedin": true
+            }
+          },
+          "5f1179f7-5262-475e-a944-fd3a53770110": {
+            "type": "customer_services",
+            "settings": {
+              "physiotherapy": true,
+              "massage_therapy": true,
+              "vehicle_injury_treatment": true,
+              "acupuncture": true,
+              "neurological_rehabilitation": true,
+              "custom_made_orthotics": true,
+              "enable_custom_service": false,
+              "customer_service": "",
+              "customer_service_link": ""
+            }
+          },
+          "f07e2fb9-9c36-4947-8c58-06744c0bab0c": {
+            "type": "subscribe_us",
+            "settings": {
+              "enable_paragraph": true,
+              "paragraph_text": "Get Business news, tip and solutions to your problems from our experts.",
+              "paragraph_text_color": ""
+            }
+          }
+        },
+        "block_order": [
+          "37e2927b-2b5b-4e54-9f34-502ff4caaa48",
+          "5f1179f7-5262-475e-a944-fd3a53770110",
+          "f07e2fb9-9c36-4947-8c58-06744c0bab0c"
+        ],
+        "settings": {
+          "get_in_touch_sec": true,
+          "recent_posts": true,
+          "customer_services_sec": true,
+          "subscribe_us_sec": true
+        }
       }
     },
     "content_for_index": [
