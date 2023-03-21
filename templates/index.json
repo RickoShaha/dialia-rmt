@@ -75,33 +75,56 @@
       "settings": {
       }
     },
-    "93d67b3a-32fc-4f3c-a92c-f21464e16e6a": {
-      "type": "heroslider",
+    "a0544d6d-8be0-4843-8587-bf0dce262107": {
+      "type": "features_area",
       "blocks": {
-        "template--18354383683899__93d67b3a-32fc-4f3c-a92c-f21464e16e6a-1679321771a5db9e17-0": {
-          "type": "slider",
+        "fa3d20c4-1415-4f8b-a3da-48b907d2c8fd": {
+          "type": "feature_block",
           "settings": {
-            "image": "shopify:\/\/shop_images\/heroslider-image-2.jpg",
+            "image": "shopify:\/\/shop_images\/logo.png",
             "enable_heading": true,
-            "heading_text": "",
-            "heading_size": "h1",
+            "heading_text": "Massage Therapy",
+            "heading_size": "h5",
             "heading_color": "",
             "enable_paragraph": true,
-            "paragraph_text": "",
+            "paragraph_text": "<p>Massage therapy is the manipulation of the soft tissues of the body including muscles, connective tissue, tendons, ligaments and joints.<\/p>",
             "paragraph_text_size": 14,
-            "paragraph_text_color": "",
-            "enable_btn": true,
-            "btn_bg_color": "",
-            "btn_text": "",
-            "btn_text_color": "",
-            "btn_link": "\/",
-            "blocks_alignment": "",
-            "text_alignment": ""
+            "paragraph_text_color": ""
+          }
+        },
+        "afb971fb-c60b-4991-ad34-24786c6fe27a": {
+          "type": "feature_block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/logo.png",
+            "enable_heading": true,
+            "heading_text": "Physio Therapy",
+            "heading_size": "h5",
+            "heading_color": "",
+            "enable_paragraph": true,
+            "paragraph_text": "<p>Physiotherapists spend years studying how the body works, how injuries impact performance & how to recover and repair injured tissues.<\/p>",
+            "paragraph_text_size": 14,
+            "paragraph_text_color": ""
+          }
+        },
+        "61d88e16-c864-4a20-87e2-5b9fb5232932": {
+          "type": "feature_block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/logo.png",
+            "enable_heading": true,
+            "heading_text": "Acupuncture",
+            "heading_size": "h5",
+            "heading_color": "",
+            "enable_paragraph": true,
+            "paragraph_text": "<p>Acupuncture is a form of alternative medicine in which thin needles are inserted into the body. It is a key component of medicine.<\/p>",
+            "paragraph_text_size": 14,
+            "paragraph_text_color": ""
           }
         }
       },
       "block_order": [
-        "template--18354383683899__93d67b3a-32fc-4f3c-a92c-f21464e16e6a-1679321771a5db9e17-0"
+        "fa3d20c4-1415-4f8b-a3da-48b907d2c8fd",
+        "afb971fb-c60b-4991-ad34-24786c6fe27a",
+        "61d88e16-c864-4a20-87e2-5b9fb5232932"
       ],
       "settings": {
       }
@@ -109,6 +132,6 @@
   },
   "order": [
     "heroslider",
-    "93d67b3a-32fc-4f3c-a92c-f21464e16e6a"
+    "a0544d6d-8be0-4843-8587-bf0dce262107"
   ]
 }
