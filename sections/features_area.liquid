@@ -5,14 +5,14 @@
             <div class="row justify-content-center mt-30-reverse">
                 {% for block in section.blocks %}
                     <!-- Single Feature -->
-                    <div class="block-wrapper-{{block.id}}">
+                    
                         <div class="col-lg-4 col-md-6 col-12 mt-30">
                             <div class="tm-feature text-center wow fadeInUp">
-                                <span class="tm-feature-icon">
-                                    {{ block.settings.image | img_url: '60' |  img_tag}}
+                                <span class="tm-feature-icon">              
+                                    {{ block.settings.image | img_url: 'medium' |  img_tag}}
                                 </span>
                                 <span class="tm-feature-backicon">
-                                    {{ block.settings.image | img_url: '160' |  img_tag }}
+                                    {{ block.settings.image | img_url: 'large' |  img_tag }}
                                 </span>
                                 {% if block.settings.enable_heading ==  true %}
                                     <{{ block.settings.heading_size }} style="color:{{ block.settings.heading_color }}">{{block.settings.heading_text}}</{{block.settings.heading_size}}>    
@@ -22,7 +22,7 @@
                                 {% endif %}
                             </div>
                         </div>
-                    </div>
+                    
                     <!--// Single Feature -->
                 {% endfor %}
 
@@ -46,7 +46,7 @@
                     {
                         "type": "image_picker",
                         "id": "image",
-                        "label": "Icon"
+                        "label": "Image"
                     },
                     {
                         "type": "header",
