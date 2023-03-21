@@ -1,0 +1,412 @@
+<!-- Footer Area -->
+<footer class="footer">
+  <!-- Footer Widgets -->
+  <div class="footer-toparea tm-padding-section">
+    <div class="container">
+      <div class="row widgets footer-widgets">
+        {% for block in section.blocks %}
+            {% case block.type %}
+                {% when 'get_in_touch' %}
+                    {% if section.settings.get_in_touch_sec == true %}
+                        <div class="col-lg-3 col-md-6 col-12">
+                            <!-- Single Widget (Widget Contact) -->
+                            <div class="single-widget widget-contact">
+                              <h5 class="widget-title">Get In Touch</h5>
+                              <ul>
+                                {% if block.settings.enable_address == true %}
+                                    <li><b>Address :</b>{{block.settings.address_text}}</li>    
+                                {% endif %}
+                                {% if block.settings.enable_phone == true %}
+                                    <li><b>Phone :</b><a href="tel:+{{block.settings.phone_text}}">{{block.settings.phone_text}}</a></li>
+                                {% endif %}
+                                {% if block.settings.enable_email == true %}
+                                    <li><b>Email :</b><a href="mailto:{{block.settings.email_text}}">{{block.settings.email_text}}</a></li>    
+                                {% endif %}
+                              </ul>
+                              <ul class="widget-contact-social">
+                                {% if block.settings.twitter == true %}
+                                    <li>
+                                        <a href="#"><i class="zmdi zmdi-twitter"></i></a>
+                                    </li>
+                                {% endif %}
+                                {% if block.settings.facebook == true %}
+                                    <li>
+                                        <a href="#"><i class="zmdi zmdi-facebook"></i></a>
+                                    </li>
+                                {% endif %}
+                                {% if block.settings.pinterest == true %}
+                                    <li>
+                                        <a href="#"><i class="zmdi zmdi-pinterest"></i></a>
+                                    </li>
+                                {% endif %}
+                                {% if block.settings.linkedin == true %}
+                                    <li>
+                                        <a href="#"><i class="zmdi zmdi-linkedin"></i></a>
+                                    </li>
+                                {% endif %}
+                                
+                              </ul>
+                            </div>
+                            <!-- // Single Widget (Widget Contact) -->
+                          </div>
+                    {% endif %}                    
+            {% endcase %}
+        {% endfor %}
+        
+        {% if section.settings.recent_posts == true %}
+            <div class="col-lg-3 col-md-6 col-12">
+                <!-- Single Widget (Widget Blog) -->
+                <div class="single-widget widget-recentpost">
+                  <h5 class="widget-title">Recent Posts</h5>
+                  <ul>
+                      {% for blog in blogs['news'].articles limit: 3 %}
+                              <li>
+                                  <a href="{{blog.url}}" class="widget-recentpost-image">
+                                      <img src="{{blog.image | img_url}}" alt="blog thumbnail" loading="lazy" width height>
+                                  </a>
+                                  <div class="widget-recentpost-content">
+                                      <h6><a href="{{blog.url}}">{{blog.title}}</a></h6>
+                                      <span>{{blog.published_at | date: '%B %d, %Y'}}</span>
+                                  </div>
+                              </li>
+                      {% endfor %}     
+                  </ul>
+                </div>
+                <!-- // Single Widget (Widget Blog) -->
+              </div>
+        {% endif %}
+
+        {% for block in section.blocks %}
+            {% case block.type %}
+                {% when 'customer_services' %}
+                    {% if section.settings.customer_services_sec == true %}
+                        <div class="col-lg-3 col-md-6 col-12">
+                            <!-- Single Wiget (Widget Quicklinks) -->
+                            <div class="single-widget widget-quicklinks">
+                              <h5 class="widget-title">Customer services</h5>
+                              <ul>
+                                {% if block.settings.physiotherapy == true %}
+                                    <li><a href="#">Physiotherapy</a></li>    
+                                {% endif %}
+                                {% if block.settings.massage_therapy == true %}
+                                    <li><a href="#">Massage Therapy</a></li>    
+                                {% endif %}
+                                {% if block.settings.vehicle_injury_treatment == true %}
+                                    <li><a href="#">Vehicle Injury Treatment</a></li>    
+                                {% endif %}
+                                {% if block.settings.acupuncture == true %}
+                                    <li><a href="#">Acupuncture</a></li>
+                                {% endif %}
+                                {% if block.settings.neurological_rehabilitation == true %}
+                                    <li><a href="#">Neurological Rehabilitation</a></li> 
+                                {% endif %}
+                                {% if block.settings.custom_made_orthotics == true %}
+                                    <li><a href="#">Custom-Made Orthotics</a></li> 
+                                {% endif %}
+    
+    
+                                {% if block.settings.enable_custom_service == true %}
+                                    <li><a href="{{block.settings.customer_service_link}}">{{block.settings.customer_service}}</a></li>
+                                {% endif %}
+                              </ul>
+                            </div>
+                            <!-- // Single Wiget (Widget Quicklinks) -->
+                          </div>
+                    {% endif %}
+                    
+
+                {% when 'subscribe_us' %}
+                    {% if section.settings.subscribe_us_sec == true %}
+                        <div class="col-lg-3 col-md-6 col-12">
+                            <!-- Single Widget (Widget Newsletter) -->
+                            <div class="single-widget widget-newsletter">
+                              <h5 class="widget-title">Subscribe us</h5>
+                              {% if block.settings.enable_paragraph == true %}
+                                <p style="color:{{block.settings.paragraph_text_color}}">{{block.settings.paragraph_text}}</p>  
+                              {% endif %}
+                              <form id="tm-mailchimp-form" class="widget-newsletter-form">
+                                <input id="mc-email" type="text" placeholder="Email address" required="required">
+                                <button id="mc-submit" type="submit" class="tm-button"><i class="zmdi zmdi-mail-send"></i></button>
+                              </form>
+                              <!-- Mailchimp Alerts -->
+                              <div class="tm-mailchimp-alerts">
+                                <div class="tm-mailchimp-submitting"></div>
+                                <div class="mailchimp-success"></div>
+                                <div class="tm-mailchimp-error"></div>
+                              </div>
+                              <!-- // Mailchimp Alerts -->
+                              <img src="{{'payment-methods.png' | img_url: 'master'}}" alt="payment methods" loading="lazy" width height>
+                            </div>
+                            <!-- // Single Widget (Widget Newsletter) -->
+                        </div>
+                    {% endif %}
+            {% endcase %}
+            
+        {% endfor %}
+
+
+        
+
+        
+      </div>
+    </div>
+  </div>
+  <!-- // Footer Widgets -->
+
+  <!-- Footer -->
+  <div class="footer-bottomarea">
+    <div class="container">
+      <p class="footer-copyright">Copyright 2019 by <a href="#">thememarch</a>. All rights reserved</p>
+    </div>
+  </div>
+  <!-- // Footer -->
+</footer>
+<!-- // Footer Area -->
+
+{% schema %}
+{
+  "name": "Footer",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "get_in_touch_sec",
+      "label": "Get in touch",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "recent_posts",
+      "label": "Recent Posts",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "customer_services_sec",
+      "label": "Customer Services",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "subscribe_us_sec",
+      "label": "Subscribe Us",
+      "default": true
+    }
+  ],
+  "blocks": [
+    {
+      "type": "get_in_touch",
+      "name": "Get in touch",
+      "settings": [
+        {
+          "type": "header",
+          "content": "Address Settings"
+        },
+        {
+          "type": "checkbox",
+          "id": "enable_address",
+          "label": "Show Address",
+          "default": true,
+          "info": "Check this to show Address"
+        },
+        {
+          "type": "text",
+          "id": "address_text",
+          "label": "Address Text",
+          "placeholder": "Put your Address here",
+          "default": "2726 Avenue Papineau Montreal, QC, Canada"
+        },
+        {
+          "type": "color",
+          "id": "address_color",
+          "label": "Address Font Color"
+        },
+        {
+          "type": "header",
+          "content": "Phone Settings"
+        },
+        {
+          "type": "checkbox",
+          "id": "enable_phone",
+          "label": "Show Phone",
+          "default": true,
+          "info": "Check this to show Phone"
+        },
+        {
+          "type": "text",
+          "id": "phone_text",
+          "label": "Phone Number",
+          "placeholder": "Put your Phone Number here",
+          "default": "1-800-915-6270"
+        },
+        {
+          "type": "color",
+          "id": "phone_color",
+          "label": "Phone Font Color"
+        },
+        {
+          "type": "header",
+          "content": "E-mail Settings"
+        },
+        {
+          "type": "checkbox",
+          "id": "enable_email",
+          "label": "Show E-mail",
+          "default": true,
+          "info": "Check this to show E-mail"
+        },
+        {
+          "type": "text",
+          "id": "email_text",
+          "label": "E-mail",
+          "placeholder": "Put your E-mail here",
+          "default": "info@example.com"
+        },
+        {
+          "type": "color",
+          "id": "email_color",
+          "label": "E-mail Font Color"
+        },
+        {
+          "type": "header",
+          "content": "Socials Settings",
+          "info": "Check the Socials to add"
+        },
+        {
+          "type": "checkbox",
+          "id": "twitter",
+          "label": "Twitter",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "facebook",
+          "label": "Facebook",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "pinterest",
+          "label": "Pinterest",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "linkedin",
+          "label": "LinkedIn",
+          "default": true
+        }
+      ]
+    },
+    {
+      "type": "customer_services",
+      "name": "Customer Services",
+      "settings": [
+        {
+          "type": "header",
+          "content": "Default Services",
+          "info": "Check to include the following default services"
+        },
+        {
+          "type": "checkbox",
+          "id": "physiotherapy",
+          "label": "Physiotherapy",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "massage_therapy",
+          "label": "Massage Therapy",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "vehicle_injury_treatment",
+          "label": "Vehicle Injury Treatment",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "acupuncture",
+          "label": "Acupuncture",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "neurological_rehabilitation",
+          "label": "Neurological Rehabilitation",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "custom_made_orthotics",
+          "label": "Custom-Made Orthotics",
+          "default": true
+        },
+        {
+          "type": "header",
+          "content": "Custom Service"
+        },
+        {
+          "type": "checkbox",
+          "id": "enable_custom_service",
+          "label": "Add Custom Service",
+          "default": false,
+          "info": "Check this to add a custom service"
+        },
+        {
+          "type": "text",
+          "id": "customer_service",
+          "label": "Customer Service Title",
+          "placeholder": "Put service titile here"
+        },
+        {
+          "type": "url",
+          "id": "customer_service_link",
+          "label": "Redirect Link for corresponding Custom Service",
+          "info": "This links Redirect to the corresponding Custom Service"
+        }
+      ]
+    },
+    {
+        "type": "subscribe_us",
+        "name":  "Subscribe Us",
+        "settings": [
+            {
+                "type": "checkbox",
+                "id": "enable_paragraph",
+                "label": "Enable Paragraph",
+                "default": true
+            },
+            {
+                "type": "text",
+                "id": "paragraph_text",
+                "label": "Paragraph",
+                "default": "Get Business news, tip and solutions to your problems from our experts.",
+                "placeholder": "Put a paragraph here"
+            },
+            {
+                "type": "color",
+                "id": "paragraph_text_color",
+                "label": "Paragraph Text Color"
+            }
+        ]
+    }
+  ],
+  "presets" : [
+    {   
+        "name": "Footer",
+        "blocks" : [
+           {
+            "type": "get_in_touch"
+            },
+           {
+            "type": "customer_services"
+            },
+           {
+            "type": "subscribe_us"
+            }
+        ]
+    }
+  ]
+}
+{% endschema %}
