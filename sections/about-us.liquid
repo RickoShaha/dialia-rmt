@@ -1,7 +1,7 @@
 <div class="tm-section about-us-area bg-grey">
-    <div class="about-image" data-bgimage="assets/images/others/about-image-1.jpg" data-overlay="1">
+    <div class="about-image" data-bgimage="{{section.settings.background_image | asset_url}}" data-overlay="1">
         <div class="tm-videobutton">
-            <a data-fancybox href="https://www.youtube.com/watch?v=Sv511KEiIJQ">
+            <a data-fancybox href="{{section.settings.video_url}}">
                 <span><i class="flaticon-play-button"></i></span>
             </a>
         </div>
@@ -10,23 +10,33 @@
         <div class="row justify-content-end">
             <div class="col-lg-6">
                 <div class="about-content tm-padding-section">
-                    <h2><span><span class="color-theme">Positive Effects</span> of</span><br>
-                        Dialia Registered Massage Therapy</h2>
-                    <p>The health care profession of Dialia Registered Massage Therapy is far more
-                        advanced than typical bodywork or relaxation massage.</p>
-                    <p>Registered Massage therapy can be used for the treatment of both acute and
-                        chronic conditions. The purpose of massage is generally for the treatment of
-                        body stress or pain. Our services will help you reduce stress, relieve pain
-                        from headaches, reduce
-                        pain from injuries. Registered Massage Therapy is a safe and natural health
-                        care
-                        therapy that can help alleviate the discomfort associated with everyday. </p>
+                    {% if section.settings.enable_heading == true %}
+                        <{{section.settings.heading_size}} style="color:{{section.settings.heading_color}}">
+                            {% if section.settings.enable_span2 == true %}
+                                <span style="color:{{section.settings.span2_color}}">
+                                    {% if section.settings.enable_span1 == true %}
+                                        <span class="color-theme" style="color:{{section.settings.span1_color}}">{{section.settings.span1_text}}</span>    
+                                    {% endif %}
+                                    {{section.settings.span2_text}}
+                                    </span><br>    
+                            {% endif %}
+                        {{section.settings.heading_text}}
+                    </{{section.settings.heading_size}}>
+                    {% endif %}
+                    {% if section.settings.enable_paragraph == true %}
+                        <p style="color:{{section.settings.paragraph_text_color}}; font-size: {{section.settings.paragraph_text_size}}px">{{section.settings.paragraph_text}}</p>
+                    {% endif %}
                     <div class="about-contentbottom">
-                        <a href="about-us.html" class="tm-button">Read more</a>
-                        <a href="tel:+18009156270" class="tm-callbutton">
-                            <span class="tm-callbutton-icon"><i class="zmdi zmdi-phone-in-talk"></i></span>
-                            <h3>1-800-915-6270</h3>
-                        </a>
+                        {% if section.settings.enable_button == true %}
+                            <a href="about-us.html" class="tm-button">{{section.settings.button_text}}</a>    
+                        {% endif %}
+                        {% if section.settings.enable_phone == true %}
+                            <a href="tel:+{{section.settings.phone_text}}" class="tm-callbutton">
+                                <span class="tm-callbutton-icon"><i class="zmdi zmdi-phone-in-talk"></i></span>
+                                <h3 style="color:{{section.settings.phone_color}}">{{section.settings.phone_text}}</h3>
+                            </a>    
+                        {% endif %}
+                        
                     </div>
                 </div>
             </div>
@@ -38,7 +48,178 @@
     {
         "name": "About Us",
         "settings": [
-            
+            {
+                "type": "image_picker",
+                "id": "background_image",
+                "label": "Background Image"
+            },
+            {
+                "type": "video_url",
+                "id": "video_url",
+                "label": "Video Url",
+                "accept": [
+                    "youtube",
+                    "vimeo"
+                  ]
+            },
+            {
+                "type": "header",
+                "content": "Heading"
+            },
+            {
+                "type": "checkbox",
+                "id": "enable_heading",
+                "label": "Add Heading",
+                "default": true
+            },
+            {
+                "type": "checkbox",
+                "id": "enable_span1",
+                "label": "Enable First Span",
+                "default": true
+            },
+            {
+                "type": "text",
+                "id": "span1_text",
+                "label": "First Span Text",
+                "default": "Positive Effects",
+                "placeholder": "Put here First Span Text"
+            },
+            {
+                "type": "color",
+                "id": "span1_color",
+                "label": "First Span Color"
+            },
+            {
+                "type": "checkbox",
+                "id": "enable_span2",
+                "label": "Enable Second Span",
+                "default": true
+            },
+            {
+                "type": "text",
+                "id": "span2_text",
+                "label": "Second Span Text",
+                "default": "of",
+                "placeholder": "Put here Second Span Text"
+            },
+            {
+                "type": "color",
+                "id": "span2_color",
+                "label": "Second Span Color"
+            },
+            {
+                "type": "text",
+                "id": "heading_text",
+                "label": "Heading Text",
+                "default": "Dialia Registered Massage Therapy"
+            },
+            {
+                "type": "select",
+                "id": "heading_size",
+                "label": "Heading Size",
+                "options": [
+                    {
+                        "value": "h1",
+                        "label": "Big"
+                    },
+                    {
+                        "value": "h2",
+                        "label": "Medium"
+                    },
+                    {
+                        "value": "h3",
+                        "label": "Small"
+                    }
+                ],
+                "default": "h2"
+            },
+            {
+                "type": "color",
+                "id": "heading_color",
+                "label": "Heading Font Color"
+            },
+            {
+                "type": "header",
+                "content": "Paragraph"
+            },
+            {
+                "type": "checkbox",
+                "id": "enable_paragraph",
+                "label": "Add Paragraph",
+                "default": true
+            },
+            {
+                "type": "richtext",
+                "id": "paragraph_text",
+                "label": "Paragraph Text",
+                "default": "<p>The health care profession of Dialia Registered Massage Therapy is far more advanced than typical bodywork or relaxation massage.      Registered Massage therapy can be used for the treatment of both acute and chronic conditions. The purpose of massage is generally for the treatment of body stress or pain. Our services will help you reduce stress, relieve pain from headaches, reduce pain from injuries. Registered Massage Therapy is a safe and natural health care therapy that can help alleviate the discomfort associated with everyday.</p>"
+            },
+            {
+                "type": "range",
+                "id": "paragraph_text_size",
+                "min": 10,
+                "max": 25,
+                "step": 1,
+                "unit": "px",
+                "label": "Paragraph Font Size",
+                "default": 14
+            },
+            {
+                "type": "color",
+                "id": "paragraph_text_color",
+                "label": "Paragraph Font Color"
+            },
+            {
+                "type": "header",
+                "content": "Button Settings"
+            },
+            {
+                "type": "checkbox",
+                "id": "enable_button",
+                "label": "Add Button",
+                "default": true
+            },
+            {
+                "type": "text",
+                "id": "button_text",
+                "label": "Button Text",
+                "default": "Read more",
+                "placeholder": "Put what to display in button"
+            },
+            {
+                "type": "color",
+                "id": "button_color",
+                "label": "Button Color"
+            },
+            {
+                "type": "url",
+                "id": "button_link",
+                "label": "Button Link",
+                "info": "Clicking on button redirects to this link"
+            },
+            {
+                "type": "header",
+                "content": "Phone Settings"
+            },
+            {
+                "type": "checkbox",
+                "id": "enable_phone",
+                "label": "Enable Phone",
+                "default": true
+            },
+            {
+                "type": "text",
+                "id": "phone_text",
+                "label": "Phone Number",
+                "default": "1-800-915-6270",
+                "placeholder": "Put phone number here"
+            },
+            {
+                "type": "color",
+                "id": "phone_color",
+                "label": "Phone Color"
+            }
         ],
         "presets": [
             {
