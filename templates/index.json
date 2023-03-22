@@ -288,11 +288,20 @@
             "heading_size": "h2",
             "heading_color": ""
           }
+        },
+        "10809faa-d223-4858-ac9a-11752c879ed3": {
+          "type": "button",
+          "settings": {
+            "button_text": "Book an Appoinment",
+            "button_color": "",
+            "button_link": "shopify:\/\/collections\/frontpage"
+          }
         }
       },
       "block_order": [
         "template--18386953830715__1feb48f4-4bf3-46a2-9ffb-1e093e0a5d84-1679494126a4300683-0",
-        "b9d36f15-87d4-4ba5-8da1-1b3ab3064ef0"
+        "b9d36f15-87d4-4ba5-8da1-1b3ab3064ef0",
+        "10809faa-d223-4858-ac9a-11752c879ed3"
       ],
       "settings": {
       }
