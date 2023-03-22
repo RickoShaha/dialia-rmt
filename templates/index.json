@@ -132,6 +132,28 @@
     "8a2b0123-b17b-445a-8dce-9c1e819b03c9": {
       "type": "about-us",
       "settings": {
+        "video_url": "",
+        "enable_heading": true,
+        "enable_span1": true,
+        "span1_text": "Positive Effects",
+        "span1_color": "",
+        "enable_span2": true,
+        "span2_text": "of",
+        "span2_color": "",
+        "heading_text": "Dialia Registered Massage Therapy",
+        "heading_size": "h2",
+        "heading_color": "",
+        "enable_paragraph": true,
+        "paragraph_text": "<p>The health care profession of Dialia Registered Massage Therapy is far more advanced than typical bodywork or relaxation massage.      Registered Massage therapy can be used for the treatment of both acute and chronic conditions. The purpose of massage is generally for the treatment of body stress or pain. Our services will help you reduce stress, relieve pain from headaches, reduce pain from injuries. Registered Massage Therapy is a safe and natural health care therapy that can help alleviate the discomfort associated with everyday.<\/p>",
+        "paragraph_text_size": 14,
+        "paragraph_text_color": "",
+        "enable_button": true,
+        "button_text": "Read more",
+        "button_color": "",
+        "button_link": "",
+        "enable_phone": true,
+        "phone_text": "1-800-915-6270",
+        "phone_color": ""
       }
     },
     "1ef0ca1c-3745-473e-a3c0-65090e126254": {
@@ -247,12 +269,40 @@
         "paragraph_text_size": 14,
         "paragraph_text_color": ""
       }
+    },
+    "1feb48f4-4bf3-46a2-9ffb-1e093e0a5d84": {
+      "type": "call-to-action",
+      "blocks": {
+        "template--18386953830715__1feb48f4-4bf3-46a2-9ffb-1e093e0a5d84-1679494126a4300683-0": {
+          "type": "header",
+          "settings": {
+            "heading_text": "New Patient Special Offer",
+            "heading_size": "h3",
+            "heading_color": ""
+          }
+        },
+        "b9d36f15-87d4-4ba5-8da1-1b3ab3064ef0": {
+          "type": "header",
+          "settings": {
+            "heading_text": "For your convenience, you can book your appointment",
+            "heading_size": "h2",
+            "heading_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--18386953830715__1feb48f4-4bf3-46a2-9ffb-1e093e0a5d84-1679494126a4300683-0",
+        "b9d36f15-87d4-4ba5-8da1-1b3ab3064ef0"
+      ],
+      "settings": {
+      }
     }
   },
   "order": [
     "heroslider",
     "a0544d6d-8be0-4843-8587-bf0dce262107",
     "8a2b0123-b17b-445a-8dce-9c1e819b03c9",
-    "1ef0ca1c-3745-473e-a3c0-65090e126254"
+    "1ef0ca1c-3745-473e-a3c0-65090e126254",
+    "1feb48f4-4bf3-46a2-9ffb-1e093e0a5d84"
   ]
 }
