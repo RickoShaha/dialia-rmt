@@ -128,10 +128,16 @@
       ],
       "settings": {
       }
+    },
+    "8a2b0123-b17b-445a-8dce-9c1e819b03c9": {
+      "type": "about-us",
+      "settings": {
+      }
     }
   },
   "order": [
     "heroslider",
-    "a0544d6d-8be0-4843-8587-bf0dce262107"
+    "a0544d6d-8be0-4843-8587-bf0dce262107",
+    "8a2b0123-b17b-445a-8dce-9c1e819b03c9"
   ]
 }
