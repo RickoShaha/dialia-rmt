@@ -181,12 +181,28 @@
             "paragraph_text_color": "",
             "readmore_url": ""
           }
+        },
+        "2c7b6d2f-443f-46f9-925c-e454f75e105f": {
+          "type": "service",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/logo.png",
+            "enable_heading": true,
+            "heading_text": "Physiotherapy",
+            "heading_size": "h5",
+            "heading_color": "",
+            "enable_paragraph": true,
+            "paragraph_text": "<p>A personal injury from vehicle accident trauma is common many times effects of an vehicle injury are delayed or subtle.<\/p>",
+            "paragraph_text_size": 14,
+            "paragraph_text_color": "",
+            "readmore_url": ""
+          }
         }
       },
       "block_order": [
         "template--18386953830715__1ef0ca1c-3745-473e-a3c0-65090e126254-16794782166a35484f-0",
         "ee75d79f-a88a-493b-bbdd-c0f977ac116c",
-        "c5d8b204-e074-48de-869b-af001cea5965"
+        "c5d8b204-e074-48de-869b-af001cea5965",
+        "2c7b6d2f-443f-46f9-925c-e454f75e105f"
       ],
       "settings": {
         "background_image": "shopify:\/\/shop_images\/bg-shape-1.png",
