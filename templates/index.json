@@ -211,6 +211,21 @@
             "paragraph_text_color": "",
             "readmore_url": ""
           }
+        },
+        "d2a10181-743f-43b8-9392-d691b76f0034": {
+          "type": "service",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/logo.png",
+            "enable_heading": true,
+            "heading_text": "Vehicle Injury Treatment",
+            "heading_size": "h5",
+            "heading_color": "",
+            "enable_paragraph": true,
+            "paragraph_text": "<p>A personal injury from vehicle accident trauma is common many times effects of an vehicle injury are delayed or subtle.<\/p>",
+            "paragraph_text_size": 14,
+            "paragraph_text_color": "",
+            "readmore_url": ""
+          }
         }
       },
       "block_order": [
@@ -218,7 +233,8 @@
         "ee75d79f-a88a-493b-bbdd-c0f977ac116c",
         "c5d8b204-e074-48de-869b-af001cea5965",
         "2c7b6d2f-443f-46f9-925c-e454f75e105f",
-        "bc417230-9368-48d9-8dcf-d8bfcf1fbca4"
+        "bc417230-9368-48d9-8dcf-d8bfcf1fbca4",
+        "d2a10181-743f-43b8-9392-d691b76f0034"
       ],
       "settings": {
         "background_image": "shopify:\/\/shop_images\/bg-shape-1.png",
