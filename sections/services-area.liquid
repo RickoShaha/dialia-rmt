@@ -1,0 +1,232 @@
+<!-- Services Area -->
+<div class="tm-section services-area tm-padding-section bg-white">
+    <span class="bg-shape-left"><img src="{{section.settings.background_image | img_url}}" alt="background shape" loading="lazy" width height></span>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-xl-6 col-lg-8 col-md-10 col-12">
+                <div class="tm-section-title text-center">
+                    {% if section.settings.enable_heading == true %}
+                        <{{section.settings.heading_size}} style="color:{{section.settings.heading_color}}">{{section.settings.heading_text}}</{{section.settings.heading_size}}>    
+                    {% endif %}
+                    {% if section.settings.enable_paragraph == true %}
+                        <p style="color:{{section.settings.paragraph_text_color}}; font-size: {{section.settings.paragraph_text_size}}px">
+                        {{section.settings.paragraph_text}}</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center mt-30-reverse">
+            {% for block in section.blocks %}
+                <!-- Single Service -->
+            <div class="col-lg-4 col-md-6 col-12 mt-30">
+                <div class="tm-service text-center wow fadeInUp">
+                    <div class="tm-service-inner">
+                        <span class="tm-service-icon">
+                            {{ block.settings.image | img_url: 'medium' |  img_tag}}
+                        </span>
+                        <span class="tm-service-backicon">
+                            {{ block.settings.image | img_url: 'large' |  img_tag}}
+                        </span>
+                        {% if block.settings.enable_heading ==  true %}
+                            <{{ block.settings.heading_size }} style="color:{{ block.settings.heading_color }}"><a href="{{block.settings.readmore_url}}">{{block.settings.heading_text}}</a></{{block.settings.heading_size}}>    
+                        {% endif %}
+                        {% if block.settings.enable_paragraph == true %}
+                            <p style="font-size:{{block.settings.paragraph_text_size}}px; color:{{block.settings.paragraph_text_color}}">{{block.settings.paragraph_text}}</p>
+                        {% endif %}
+                        <a href="{{block.settings.readmore_url}}" class="tm-readmore">Read more</a>
+                    </div>
+                </div>
+            </div>
+            <!--// Single Service -->
+            {% endfor %}
+            
+
+        </div>
+    </div>
+</div>
+<!--// Services Area -->
+
+{% schema %}
+    {
+        "name": "Services Area",
+        "settings": [
+            {
+                "type": "image_picker",
+                "id": "background_image",
+                "label": "Background Image"
+            },
+            {
+                "type": "header",
+                "content": "Heading"
+            },
+            {
+                "type": "checkbox",
+                "id": "enable_heading",
+                "label": "Add Heading",
+                "default": true
+            },
+            {
+                "type": "text",
+                "id": "heading_text",
+                "label": "Heading Text",
+                "default": "Our Services"
+            },
+            {
+                "type": "select",
+                "id": "heading_size",
+                "label": "Heading Size",
+                "options": [
+                    {
+                        "value": "h1",
+                        "label": "Big"
+                    },
+                    {
+                        "value": "h2",
+                        "label": "Medium"
+                    },
+                    {
+                        "value": "h3",
+                        "label": "Small"
+                    }
+                ],
+                "default": "h2"
+            },
+            {
+                "type": "color",
+                "id": "heading_color",
+                "label": "Heading Font Color"
+            },
+            {
+                "type": "header",
+                "content": "Paragraph"
+            },
+            {
+                "type": "checkbox",
+                "id": "enable_paragraph",
+                "label": "Add Paragraph",
+                "default": true
+            },
+            {
+                "type": "richtext",
+                "id": "paragraph_text",
+                "label": "Paragraph Text",
+                "default": "<p>Lorem ipsum dolor sit amet, in quodsi vulputate pro. Ius illum vocent mediocritatem an cule dicta iriure at phaedrum. </p>"
+            },
+            {
+                "type": "range",
+                "id": "paragraph_text_size",
+                "min": 10,
+                "max": 25,
+                "step": 1,
+                "unit": "px",
+                "label": "Paragraph Font Size",
+                "default": 14
+            },
+            {
+                "type": "color",
+                "id": "paragraph_text_color",
+                "label": "Paragraph Font Color"
+            }
+        ],
+        "blocks": [
+            {
+                "type" : "service",
+                "name": "Service",
+                "settings": [
+                    {
+                        "type": "image_picker",
+                        "id": "image",
+                        "label": "Image"
+                    },
+                    {
+                        "type": "header",
+                        "content": "Header"
+                    },
+                    {
+                        "type": "checkbox",
+                        "id": "enable_heading",
+                        "label": "Add Heading",
+                        "default": true
+                    },
+                    {
+                        "type": "text",
+                        "id": "heading_text",
+                        "label": "Heading Text"
+                    },
+                    {
+                        "type": "select",
+                        "id": "heading_size",
+                        "label": "Heading Size",
+                        "options": [
+                            {
+                                "value": "h3",
+                                "label": "Medium"
+                            },
+                            {
+                                "value": "h4",
+                                "label": "Small"
+                            },
+                            {
+                                "value": "h5",
+                                "label": "Very Small"
+                            }
+                        ],
+                        "default": "h5"
+                    },
+                    {
+                        "type": "color",
+                        "id": "heading_color",
+                        "label": "Heading Font Color"
+                    },
+                    {
+                        "type": "header",
+                        "content": "Paragraph"
+                    },
+                    {
+                        "type": "checkbox",
+                        "id": "enable_paragraph",
+                        "label": "Add Paragraph",
+                        "default": true
+                    },
+                    {
+                        "type": "richtext",
+                        "id": "paragraph_text",
+                        "label": "Paragraph Text",
+                        "default": "<p></p>"
+                    },
+                    {
+                        "type": "range",
+                        "id": "paragraph_text_size",
+                        "min": 10,
+                        "max": 25,
+                        "step": 1,
+                        "unit": "px",
+                        "label": "Paragraph Font Size",
+                        "default": 14
+                    },
+                    {
+                        "type": "color",
+                        "id": "paragraph_text_color",
+                        "label": "Paragraph Font Color"
+                    },
+                    {
+                        "type": "url",
+                        "id": "readmore_url",
+                        "label": "Redirect Link to Read More ",
+                        "info": "This link Redirects to page when clicked on Read More"
+                    }
+                ]
+            }
+        ],
+        "presets": [
+            {
+              "name": "Services Area",
+              "blocks": [
+                {
+                    "type": "service"
+                }
+              ]
+            }
+          ]
+    }
+{% endschema %}
