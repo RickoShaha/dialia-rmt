@@ -151,10 +151,42 @@
             "paragraph_text_color": "",
             "readmore_url": ""
           }
+        },
+        "ee75d79f-a88a-493b-bbdd-c0f977ac116c": {
+          "type": "service",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/logo.png",
+            "enable_heading": true,
+            "heading_text": "Home Care Physiotherapy",
+            "heading_size": "h5",
+            "heading_color": "",
+            "enable_paragraph": true,
+            "paragraph_text": "<p>Physiotherapists spend years studying how the body works, how injuries impact performance & how to recover and repair injured tissues.<\/p>",
+            "paragraph_text_size": 14,
+            "paragraph_text_color": "",
+            "readmore_url": ""
+          }
+        },
+        "c5d8b204-e074-48de-869b-af001cea5965": {
+          "type": "service",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/logo.png",
+            "enable_heading": true,
+            "heading_text": "Aroma Therapy",
+            "heading_size": "h5",
+            "heading_color": "",
+            "enable_paragraph": true,
+            "paragraph_text": "",
+            "paragraph_text_size": 14,
+            "paragraph_text_color": "",
+            "readmore_url": ""
+          }
         }
       },
       "block_order": [
-        "template--18386953830715__1ef0ca1c-3745-473e-a3c0-65090e126254-16794782166a35484f-0"
+        "template--18386953830715__1ef0ca1c-3745-473e-a3c0-65090e126254-16794782166a35484f-0",
+        "ee75d79f-a88a-493b-bbdd-c0f977ac116c",
+        "c5d8b204-e074-48de-869b-af001cea5965"
       ],
       "settings": {
         "background_image": "shopify:\/\/shop_images\/bg-shape-1.png",
