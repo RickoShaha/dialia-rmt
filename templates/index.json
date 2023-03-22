@@ -133,11 +133,46 @@
       "type": "about-us",
       "settings": {
       }
+    },
+    "1ef0ca1c-3745-473e-a3c0-65090e126254": {
+      "type": "services-area",
+      "blocks": {
+        "template--18386953830715__1ef0ca1c-3745-473e-a3c0-65090e126254-16794782166a35484f-0": {
+          "type": "service",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/logo.png",
+            "enable_heading": true,
+            "heading_text": "Sports Rehabilitation",
+            "heading_size": "h5",
+            "heading_color": "",
+            "enable_paragraph": true,
+            "paragraph_text": "<p>Aromatherapy uses plant materials and aromatic plant oils, including essential oils. It can be offered as a complementary therapy.<\/p>",
+            "paragraph_text_size": 14,
+            "paragraph_text_color": "",
+            "readmore_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--18386953830715__1ef0ca1c-3745-473e-a3c0-65090e126254-16794782166a35484f-0"
+      ],
+      "settings": {
+        "background_image": "shopify:\/\/shop_images\/bg-shape-1.png",
+        "enable_heading": true,
+        "heading_text": "Our Services",
+        "heading_size": "h2",
+        "heading_color": "",
+        "enable_paragraph": true,
+        "paragraph_text": "<p>Lorem ipsum dolor sit amet, in quodsi vulputate pro. Ius illum vocent mediocritatem an cule dicta iriure at phaedrum. <\/p>",
+        "paragraph_text_size": 14,
+        "paragraph_text_color": ""
+      }
     }
   },
   "order": [
     "heroslider",
     "a0544d6d-8be0-4843-8587-bf0dce262107",
-    "8a2b0123-b17b-445a-8dce-9c1e819b03c9"
+    "8a2b0123-b17b-445a-8dce-9c1e819b03c9",
+    "1ef0ca1c-3745-473e-a3c0-65090e126254"
   ]
 }
