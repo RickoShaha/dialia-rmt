@@ -1,5 +1,5 @@
 <!-- Call To Action -->
-<div class="tm-section call-to-action-area tm-padding-section" data-bgimage="assets/images/bg/call-to-action-bg.jpg"
+<div class="tm-section call-to-action-area tm-padding-section" data-bgimage="{{section.settings.background_image | img_url: 'master'}}"
 data-overlay="8">
 <div class="container">
     <div class="tm-cta">
@@ -87,7 +87,8 @@ data-overlay="8">
                     {
                         "type": "url",
                         "id": "button_link",
-                        "label": "Button Link"
+                        "label": "Button Link",
+                        "default": "/"
                     }
                 ]
             }
