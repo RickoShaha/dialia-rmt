@@ -1,0 +1,147 @@
+<!-- Latest Blog Area -->
+<div class="tm-section latest-blog-area tm-padding-section bg-white">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-xl-6 col-lg-8 col-md-10 col-12">
+                <div class="tm-section-title text-center">
+                    {% if section.settings.enable_heading == true %}
+                        <{{section.settings.heading_size}} style="color:{{section.settings.heading_color}}">{{section.settings.heading_text}}</{{section.settings.heading_size}}>    
+                    {% endif %}
+                    {% if section.settings.enable_paragraph == true %}
+                        <p style="color:{{section.settings.paragraph_text_color}}; font-size: {{section.settings.paragraph_text_size}}px">
+                        {{section.settings.paragraph_text}}</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        <div class="row blog-slider-active tm-slider-dots">
+
+            {% for blog in blogs['news'].articles limit: section.settings.blog_posts %}
+            <!-- Single Blog -->
+            <div class="col">
+                <div class="tm-blog">
+                    <div class="tm-blog-top">
+                        <a href="{{blog.url}}">
+                            <img src="{{blog.image | img_url: 'master'}}" alt="blog thumbnail" loading="lazy" width height>
+                        </a>
+                        <span class="tm-blog-date">{{blog.published_at | date: '%B %d, %Y'}}</span>
+                    </div>
+                    <div class="tm-blog-bottom">
+                        <div class="tm-blog-meta">
+                            <span><a href="{{blog.url}}"><i class="zmdi zmdi-account"></i> Admin</a></span>
+                            <span><a href="{{blog.url}}"><i class="zmdi zmdi-comments"></i> Comments ({{blog.comments_count}})</a></span>
+                            <span><a href="{{blog.url}}"><i class="zmdi zmdi-folder"></i> Services</a></span>
+                        </div>
+                        <h5 class="tm-blog-title"><a href="blog-details.html">{{blog.title}}</a></h5>
+                        <p>{{blog.excerpt}}</p>
+                        <a href="{{blog.url}}" class="tm-button tm-button-dark">Read more</a>
+                    </div>
+                </div>
+            </div>
+            <!--// Single Blog -->
+            {% endfor %}   
+            
+
+
+        </div>
+    </div>
+</div>
+<!--// Latest Blog Area -->
+
+
+
+
+{% schema %}
+{
+    "name": "Latest Blog Area",
+    "settings": [
+        {
+            "type": "header",
+            "content": "Header"
+        },
+        {
+            "type": "checkbox",
+            "id": "enable_heading",
+            "label": "Add Heading",
+            "default": true
+        },
+        {
+            "type": "text",
+            "id": "heading_text",
+            "label": "Heading Text",
+            "default": "Our Latest News"
+        },
+        {
+            "type": "select",
+            "id": "heading_size",
+            "label": "Heading Size",
+            "options": [
+                {
+                    "value": "h1",
+                    "label": "Big"
+                },
+                {
+                    "value": "h2",
+                    "label": "Medium"
+                },
+                {
+                    "value": "h3",
+                    "label": "Small"
+                }
+            ],
+            "default": "h2"
+        },
+        {
+            "type": "color",
+            "id": "heading_color",
+            "label": "Heading Font Color"
+        },
+        {
+            "type": "header",
+            "content": "Paragraph"
+        },
+        {
+            "type": "checkbox",
+            "id": "enable_paragraph",
+            "label": "Add Paragraph",
+            "default": true
+        },
+        {
+            "type": "richtext",
+            "id": "paragraph_text",
+            "label": "Paragraph Text",
+            "default": "<p>Lorem ipsum dolor sit amet, in quodsi vulputate pro. Ius illum vocent mediocritatem an cule dicta iriure at phaedrum. </p>"
+        },
+        {
+            "type": "range",
+            "id": "paragraph_text_size",
+            "min": 10,
+            "max": 25,
+            "step": 1,
+            "unit": "px",
+            "label": "Paragraph Font Size",
+            "default": 14
+        },
+        {
+            "type": "color",
+            "id": "paragraph_text_color",
+            "label": "Paragraph Font Color"
+        },
+        {
+            "type": "range",
+            "id": "blog_posts",
+            "min": 1,
+            "max": 15,
+            "step": 1,
+            "label": "No of blog posts",
+            "default": 6
+        }
+    ],
+    "presets": [
+        {
+            "name": "Latest Blog Area"
+        }
+    ]
+}
+{% endschema %}
+
