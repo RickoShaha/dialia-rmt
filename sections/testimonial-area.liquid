@@ -1,0 +1,168 @@
+<!-- Testimonial Area -->
+<div class="tm-section testimonial-area tm-padding-section bg-grey">
+    <div class="bg-animated-shape">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-xl-7 col-lg-8 col-md-10 col-12">
+                <div class="tm-section-title text-center">
+                    {% if section.settings.enable_heading == true %}
+                        <{{section.settings.heading_size}} style="color:{{section.settings.heading_color}}">{{section.settings.heading_text}}</{{section.settings.heading_size}}>    
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        <div class="testimonial-slider-active tm-slider-arrow-2">
+            {% for block in section.blocks %}
+            <!-- Testimonial Single -->
+                <div class="tm-testimonial-slideritem">
+                    <div class="tm-testimonial">
+                        <div class="tm-testimonial-author">
+                            <div class="tm-testimonial-authorimage">
+                                <img src="{{block.settings.client_image | img_url:'master'}}" alt="author image" loading="lazy" width height>
+                            </div>
+                            <div class="tm-testimonial-authorinfo">
+                                <h5>{{block.settings.client_name}}</h5>
+                                <h6>{{block.settings.client_occupation}}</h6>
+                            </div>
+                        </div>
+                        <div class="tm-testimonial-content">
+                            <p>{{block.settings.client_testimonial}}</p>
+                            <div class="tm-rating">
+                                {% for rating in (1..block.settings.client_rating) %}
+                                    <span class="active"><i class="zmdi zmdi-star"></i></span>
+                                {% endfor %}
+                                {% assign rest = 5 | minus: block.settings.client_rating %}
+                                {% for rating in (1..rest) %}
+                                    <span><i class="zmdi zmdi-star"></i></span>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <!--// Testimonial Single -->
+            {% endfor %}
+            
+
+
+        </div>
+    </div>
+</div>
+<!--// Testimonial Area -->
+
+{% schema %}
+    {
+        "name": "Testimonial Area",
+        "settings": [
+            {
+                "type": "header",
+                "content": "Header"
+            },
+            {
+                "type": "checkbox",
+                "id": "enable_heading",
+                "label": "Add Heading",
+                "default": true
+            },
+            {
+                "type": "text",
+                "id": "heading_text",
+                "label": "Heading Text",
+                "default": "Our Latest News"
+            },
+            {
+                "type": "select",
+                "id": "heading_size",
+                "label": "Heading Size",
+                "options": [
+                    {
+                        "value": "h1",
+                        "label": "Big"
+                    },
+                    {
+                        "value": "h2",
+                        "label": "Medium"
+                    },
+                    {
+                        "value": "h3",
+                        "label": "Small"
+                    }
+                ],
+                "default": "h2"
+            },
+            {
+                "type": "color",
+                "id": "heading_color",
+                "label": "Heading Font Color"
+            }
+        ],
+        "blocks": [
+            {
+                "type": "testimonial",
+                "name": "Testimonial",
+                "settings": [
+                    {
+                        "type": "header",
+                        "content": "Client Information"
+                    },
+                    {
+                        "type": "image_picker",
+                        "id": "client_image",
+                        "label": "Client Image"
+                    },
+                    {
+                        "type": "text",
+                        "id": "client_name",
+                        "label": "Client Name",
+                        "placeholder": "Put Client's Name Here"
+                    },
+                    {
+                        "type": "text",
+                        "id": "client_occupation",
+                        "label": "Client Occupation",
+                        "placeholder": "Put Client's Occupation Here"
+                    },
+                    {
+                        "type": "header",
+                        "content": "Client Testimonial"
+                    },
+                    {
+                        "type": "richtext",
+                        "id": "client_testimonial",
+                        "label": "Client Testimonial",
+                        "default": "<p></p>"
+                    },
+                    {
+                        "type": "range",
+                        "id": "client_rating",
+                        "min": 1,
+                        "max": 5,
+                        "step": 1,
+                        "label": "Client Rating",
+                        "default": 3
+                    }
+                ]
+            }
+        ],
+        "presets": [
+            {
+                "name": "Testimonial Area",
+                "blocks": [
+                    {
+                        "type": "testimonial"
+                    }
+                ] 
+            }
+        ]
+    }
+{% endschema %}
+
