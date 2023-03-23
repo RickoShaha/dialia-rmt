@@ -306,6 +306,88 @@
       "settings": {
         "background_image": "shopify:\/\/shop_images\/call-to-action-bg_41433f3a-bc5b-402e-8e00-da9d8d6d0b36.jpg"
       }
+    },
+    "7c294c74-a935-46e1-981c-aebdd3d867df": {
+      "type": "pricing_area",
+      "blocks": {
+        "template--18386953830715__7c294c74-a935-46e1-981c-aebdd3d867df-167956448178621950-0": {
+          "type": "service",
+          "settings": {
+            "service_title": "Reducing or eliminating pain",
+            "enable_option1": true,
+            "minutes1": 30,
+            "price1": 65,
+            "enable_option2": true,
+            "minutes2": 45,
+            "price2": 75,
+            "enable_option3": true,
+            "minutes3": 60,
+            "price3": 90,
+            "enable_option4": true,
+            "minutes4": 90,
+            "price4": 120,
+            "enable_option5": true,
+            "minutes5": 120,
+            "price5": 160
+          }
+        },
+        "c82f1188-cf57-4014-ba2e-87b91bce36de": {
+          "type": "service",
+          "settings": {
+            "service_title": "Improving joint mobility",
+            "enable_option1": true,
+            "minutes1": 30,
+            "price1": 65,
+            "enable_option2": true,
+            "minutes2": 45,
+            "price2": 75,
+            "enable_option3": true,
+            "minutes3": 60,
+            "price3": 90,
+            "enable_option4": true,
+            "minutes4": 90,
+            "price4": 120,
+            "enable_option5": false,
+            "minutes5": 30,
+            "price5": 50
+          }
+        }
+      },
+      "block_order": [
+        "template--18386953830715__7c294c74-a935-46e1-981c-aebdd3d867df-167956448178621950-0",
+        "c82f1188-cf57-4014-ba2e-87b91bce36de"
+      ],
+      "settings": {
+        "background_image": "shopify:\/\/shop_images\/pricing-bg_be69f023-22dd-4292-af16-e9c9dda5faed.jpg",
+        "enable_heading_left": true,
+        "enable_span1_left": true,
+        "span1_text_left": "Benefits",
+        "span1_color_left": "",
+        "enable_span2_left": true,
+        "span2_text_left": "of",
+        "span2_color_left": "",
+        "heading_text_left": "Registered Massage Therapy",
+        "heading_size_left": "h2",
+        "heading_color_left": "",
+        "enable_paragraph_left": true,
+        "paragraph_text_left": "<p>There are remarkable benefits to be achieved through regular massage therapy treatments from a Registered Massage Therapist. Massage therapy can be an important part of your health maintenance plan.<\/p>",
+        "paragraph_text_size_left": 14,
+        "paragraph_text_color_left": "",
+        "enable_heading_right": true,
+        "enable_span1_right": true,
+        "span1_text_right": "Therapy",
+        "span1_color_right": "",
+        "enable_span2_right": true,
+        "span2_text_right": "Rates",
+        "span2_color_right": "",
+        "heading_text_right": "",
+        "heading_size_right": "h2",
+        "heading_color_right": "",
+        "enable_paragraph_right": true,
+        "paragraph_text_right": "<p>New and returning clients are encouraged to book a massage appointment online by clicking the book an appointment button<\/p>",
+        "paragraph_text_size_right": 14,
+        "paragraph_text_color_right": ""
+      }
     }
   },
   "order": [
@@ -313,6 +395,7 @@
     "a0544d6d-8be0-4843-8587-bf0dce262107",
     "8a2b0123-b17b-445a-8dce-9c1e819b03c9",
     "1ef0ca1c-3745-473e-a3c0-65090e126254",
-    "1feb48f4-4bf3-46a2-9ffb-1e093e0a5d84"
+    "1feb48f4-4bf3-46a2-9ffb-1e093e0a5d84",
+    "7c294c74-a935-46e1-981c-aebdd3d867df"
   ]
 }
