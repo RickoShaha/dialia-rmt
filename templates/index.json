@@ -393,13 +393,57 @@
             "minutes5": 30,
             "price5": 50
           }
+        },
+        "c4765a59-41bd-4635-b630-b52c26a5a028": {
+          "type": "service",
+          "settings": {
+            "service_title": "Reducing muscular tension",
+            "enable_option1": true,
+            "minutes1": 30,
+            "price1": 65,
+            "enable_option2": true,
+            "minutes2": 45,
+            "price2": 75,
+            "enable_option3": true,
+            "minutes3": 60,
+            "price3": 90,
+            "enable_option4": false,
+            "minutes4": 30,
+            "price4": 50,
+            "enable_option5": false,
+            "minutes5": 30,
+            "price5": 50
+          }
+        },
+        "ef55b4a9-a3b5-4903-8914-ba0228f1063f": {
+          "type": "service",
+          "settings": {
+            "service_title": "Post-surgical rehabilitation",
+            "enable_option1": true,
+            "minutes1": 30,
+            "price1": 50,
+            "enable_option2": true,
+            "minutes2": 45,
+            "price2": 75,
+            "enable_option3": true,
+            "minutes3": 60,
+            "price3": 90,
+            "enable_option4": true,
+            "minutes4": 90,
+            "price4": 75,
+            "enable_option5": true,
+            "minutes5": 120,
+            "price5": 90
+          }
         }
       },
       "block_order": [
         "template--18386953830715__7c294c74-a935-46e1-981c-aebdd3d867df-167956448178621950-0",
         "c82f1188-cf57-4014-ba2e-87b91bce36de",
         "0260deee-eee2-4ebf-9859-7238a3cf51dc",
-        "9d326183-0ddf-45e6-ab86-f9a27105509d"
+        "9d326183-0ddf-45e6-ab86-f9a27105509d",
+        "c4765a59-41bd-4635-b630-b52c26a5a028",
+        "ef55b4a9-a3b5-4903-8914-ba0228f1063f"
       ],
       "settings": {
         "background_image": "shopify:\/\/shop_images\/pricing-bg_be69f023-22dd-4292-af16-e9c9dda5faed.jpg",
