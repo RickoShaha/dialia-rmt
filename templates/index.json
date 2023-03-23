@@ -351,11 +351,33 @@
             "minutes5": 30,
             "price5": 50
           }
+        },
+        "0260deee-eee2-4ebf-9859-7238a3cf51dc": {
+          "type": "service",
+          "settings": {
+            "service_title": "Circulatory problems",
+            "enable_option1": true,
+            "minutes1": 30,
+            "price1": 65,
+            "enable_option2": true,
+            "minutes2": 45,
+            "price2": 75,
+            "enable_option3": true,
+            "minutes3": 60,
+            "price3": 90,
+            "enable_option4": false,
+            "minutes4": 30,
+            "price4": 50,
+            "enable_option5": false,
+            "minutes5": 30,
+            "price5": 50
+          }
         }
       },
       "block_order": [
         "template--18386953830715__7c294c74-a935-46e1-981c-aebdd3d867df-167956448178621950-0",
-        "c82f1188-cf57-4014-ba2e-87b91bce36de"
+        "c82f1188-cf57-4014-ba2e-87b91bce36de",
+        "0260deee-eee2-4ebf-9859-7238a3cf51dc"
       ],
       "settings": {
         "background_image": "shopify:\/\/shop_images\/pricing-bg_be69f023-22dd-4292-af16-e9c9dda5faed.jpg",
