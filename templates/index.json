@@ -503,10 +503,21 @@
             "client_testimonial": "<p>I started seeing Dr. Robinson on the recommendation of my massage therapist. Massage therapy is the science of movement and function. Massage therapy will help anybody who experiences difficulty with movement strength and pain.<\/p>",
             "client_rating": 5
           }
+        },
+        "697138f3-688c-4e10-a6e5-3048085312a8": {
+          "type": "testimonial",
+          "settings": {
+            "client_image": "shopify:\/\/shop_images\/author-image-2.jpg",
+            "client_name": "Ludie Cremin",
+            "client_occupation": "Supervisor",
+            "client_testimonial": "<p>Quae iusto consequatur consectetur velit at nulla et enim debitis. Eligendi modi consectetur laudantium. Ut quis nobis numquam omnis suscipit eum est omnis. Explicabo ipsum accusamus consectetur animi laudantium quia<\/p>",
+            "client_rating": 4
+          }
         }
       },
       "block_order": [
-        "template--18386953830715__af205c08-bc0d-414e-8149-ce3d665883da-16795798368a4444d8-0"
+        "template--18386953830715__af205c08-bc0d-414e-8149-ce3d665883da-16795798368a4444d8-0",
+        "697138f3-688c-4e10-a6e5-3048085312a8"
       ],
       "settings": {
         "enable_heading": true,
