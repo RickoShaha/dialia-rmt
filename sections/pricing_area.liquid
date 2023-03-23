@@ -26,8 +26,8 @@ data-white-overlay="9">
                 <ul class="nav" id="bstab1" role="tablist">
                     {% for block in section.blocks %}
                         <li class="nav-item">
-                            <a class="nav-link" id="bstab{{forloop.index}}-area{{forloop.index}}-tab" data-toggle="tab" href="#bstab{{forloop.index}}-area{{forloop.index}}"
-                                role="tab" aria-controls="bstab{{forloop.index}}-area{{forloop.index}}" aria-selected="true">{{block.settings.service_title}}</a>
+                            <a class="nav-link {% if forloop.index == 1 %}active show{% endif %}" id="bstab1-area{{forloop.index}}-tab" data-toggle="tab" href="#bstab1-area{{forloop.index}}"
+                                role="tab" aria-controls="bstab1-area{{forloop.index}}" aria-selected="{% if forloop.index == 1 %}true {%else%}false{% endif %}">{{block.settings.service_title}}</a>
                         </li>
                     {% endfor %}
                 </ul>
@@ -54,49 +54,48 @@ data-white-overlay="9">
                 {% endif %}
                 
 
-                {% for block in section.blocks %}
-                    <div class="tab-content" id="bstab{{forloop.index}}-ontent">
-                        <div class="tab-pane fade show active" id="bstab{{forloop.index}}-area{{forloop.index}}" role="tabpanel"
-                            aria-labelledby="bstab{{forloop.index}}-area{{forloop.index}}-tab">
-                            <h5 class="tm-pricing-name">Rates (Reducing or eliminating pain)</h5>
-                            <div class="tm-pricing-priceboxes tm-slider-dots tm-slider-dots-vertical">
-                                {% if block.settings.enable_option1 == true %}
-                                    <div class="tm-pricing-pricebox">
-                                        <h2>{{block.settings.minutes1}} <span>minutes</span></h2>
-                                        <h3>${{block.settings.price1}}</h3>
+                
+                    <div class="tab-content" id="bstab1-ontent">
+                        {% for block in section.blocks %}
+                                <div class="tab-pane fade {% if forloop.index == 1 %} active show{% endif %}" id="bstab1-area{{forloop.index}}" role="tabpanel"
+                                    aria-labelledby="bstab1-area{{forloop.index}}-tab">
+                                    <h5 class="tm-pricing-name">Rates (Reducing or eliminating pain)</h5>
+                                    <div class="tm-pricing-priceboxes tm-slider-dots tm-slider-dots-vertical">
+                                        {% if block.settings.enable_option1 == true %}
+                                            <div class="tm-pricing-pricebox">
+                                                <h2>{{block.settings.minutes1}} <span>minutes</span></h2>
+                                                <h3>${{block.settings.price1}}.00</h3>
+                                            </div>
+                                        {% endif %}
+                                        {% if block.settings.enable_option2 == true %}
+                                            <div class="tm-pricing-pricebox">
+                                                <h2>{{block.settings.minutes2}} <span>minutes</span></h2>
+                                                <h3>${{block.settings.price2}}.00</h3>
+                                            </div>
+                                        {% endif %}
+                                        {% if block.settings.enable_option3 == true %}
+                                            <div class="tm-pricing-pricebox">
+                                                <h2>{{block.settings.minutes3}} <span>minutes</span></h2>
+                                                <h3>${{block.settings.price3}}.00</h3>
+                                            </div>
+                                        {% endif %}
+                                        {% if block.settings.enable_option4 == true %}
+                                            <div class="tm-pricing-pricebox">
+                                                <h2>{{block.settings.minutes4}} <span>minutes</span></h2>
+                                                <h3>${{block.settings.price4}}.00</h3>
+                                            </div>
+                                        {% endif %}
+                                        {% if block.settings.enable_option5 == true %}
+                                            <div class="tm-pricing-pricebox">
+                                                <h2>{{block.settings.minutes5}} <span>minutes</span></h2>
+                                                <h3>${{block.settings.price5}}.00</h3>
+                                            </div>
+                                        {% endif %}
                                     </div>
-                                {% endif %}
-                                {% if block.settings.enable_option2 == true %}
-                                    <div class="tm-pricing-pricebox">
-                                        <h2>{{block.settings.minutes2}} <span>minutes</span></h2>
-                                        <h3>${{block.settings.price2}}</h3>
-                                    </div>
-                                {% endif %}
-                                {% if block.settings.enable_option3 == true %}
-                                    <div class="tm-pricing-pricebox">
-                                        <h2>{{block.settings.minutes3}} <span>minutes</span></h2>
-                                        <h3>${{block.settings.price3}}</h3>
-                                    </div>
-                                {% endif %}
-                                {% if block.settings.enable_option4 == true %}
-                                    <div class="tm-pricing-pricebox">
-                                        <h2>{{block.settings.minutes4}} <span>minutes</span></h2>
-                                        <h3>${{block.settings.price4}}</h3>
-                                    </div>
-                                {% endif %}
-                                {% if block.settings.enable_option5 == true %}
-                                    <div class="tm-pricing-pricebox">
-                                        <h2>{{block.settings.minutes5}} <span>minutes</span></h2>
-                                        <h3>${{block.settings.price5}}</h3>
-                                    </div>
-                                {% endif %}
-                            </div>
-                        </div>
-                {% endfor %}
+                                </div>
+                        {% endfor %}
 
-
-
-            </div>
+                    </div>
         </div>
     </div>
 </div>
