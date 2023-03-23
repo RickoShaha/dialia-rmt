@@ -1,0 +1,522 @@
+<!-- Pricing Area -->
+<div class="tm-section pricing-benifits-area bg-grey tm-padding-section" data-bgimage="assets/images/bg/pricing-bg.jpg"
+data-white-overlay="9">
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="tm-pricing-left">
+                {% if section.settings.enable_heading_left == true %}
+                    <{{section.settings.heading_size_left}} style="color:{{section.settings.heading_color_left}}">
+                        {% if section.settings.enable_span2_left == true %}
+                            <span style="color:{{section.settings.span2_color_left}}">
+                                {% if section.settings.enable_span1_left == true %}
+                                    <span class="color-theme" style="color:{{section.settings.span1_color_left}}">{{section.settings.span1_text_left}}</span>    
+                                {% endif %}
+                                {{section.settings.span2_text_left}}
+                                </span><br>    
+                        {% endif %}
+                    {{section.settings.heading_text_left}}
+                </{{section.settings.heading_size_left}}>
+                {% endif %}
+                {% if section.settings.enable_paragraph_left == true %}
+                    <p style="color:{{section.settings.paragraph_text_color_left}}; font-size: {{section.settings.paragraph_text_size_left}}px">{{section.settings.paragraph_text_left}}</p>
+                {% endif %}
+
+
+                <ul class="nav" id="bstab1" role="tablist">
+                    {% for block in section.blocks %}
+                        <li class="nav-item">
+                            <a class="nav-link" id="bstab{{forloop.index}}-area{{forloop.index}}-tab" data-toggle="tab" href="#bstab{{forloop.index}}-area{{forloop.index}}"
+                                role="tab" aria-controls="bstab{{forloop.index}}-area{{forloop.index}}" aria-selected="true">{{block.settings.service_title}}</a>
+                        </li>
+                    {% endfor %}
+                </ul>
+
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="tm-pricing-right">
+                {% if section.settings.enable_heading_right == true %}
+                    <{{section.settings.heading_size_right}} style="color:{{section.settings.heading_color_right}}">
+                        {% if section.settings.enable_span2_right == true %}
+                            <span style="color:{{section.settings.span2_color_right}}">
+                                {% if section.settings.enable_span1_right == true %}
+                                    <span class="color-theme" style="color:{{section.settings.span1_color_right}}">{{section.settings.span1_text_right}}</span>    
+                                {% endif %}
+                                {{section.settings.span2_text_right}}
+                                </span><br>    
+                        {% endif %}
+                    {{section.settings.heading_text_right}}
+                </{{section.settings.heading_size_right}}>
+                {% endif %}
+                {% if section.settings.enable_paragraph_right == true %}
+                    <p style="color:{{section.settings.paragraph_text_color_right}}; font-size: {{section.settings.paragraph_text_size_right}}px">{{section.settings.paragraph_text_right}}</p>
+                {% endif %}
+                
+
+                {% for block in section.blocks %}
+                    <div class="tab-content" id="bstab{{forloop.index}}-ontent">
+                        <div class="tab-pane fade show active" id="bstab{{forloop.index}}-area{{forloop.index}}" role="tabpanel"
+                            aria-labelledby="bstab{{forloop.index}}-area{{forloop.index}}-tab">
+                            <h5 class="tm-pricing-name">Rates (Reducing or eliminating pain)</h5>
+                            <div class="tm-pricing-priceboxes tm-slider-dots tm-slider-dots-vertical">
+                                {% if block.settings.enable_option1 == true %}
+                                    <div class="tm-pricing-pricebox">
+                                        <h2>{{block.settings.minutes1}} <span>minutes</span></h2>
+                                        <h3>${{block.settings.price1}}</h3>
+                                    </div>
+                                {% endif %}
+                                {% if block.settings.enable_option2 == true %}
+                                    <div class="tm-pricing-pricebox">
+                                        <h2>{{block.settings.minutes2}} <span>minutes</span></h2>
+                                        <h3>${{block.settings.price2}}</h3>
+                                    </div>
+                                {% endif %}
+                                {% if block.settings.enable_option3 == true %}
+                                    <div class="tm-pricing-pricebox">
+                                        <h2>{{block.settings.minutes3}} <span>minutes</span></h2>
+                                        <h3>${{block.settings.price3}}</h3>
+                                    </div>
+                                {% endif %}
+                                {% if block.settings.enable_option4 == true %}
+                                    <div class="tm-pricing-pricebox">
+                                        <h2>{{block.settings.minutes4}} <span>minutes</span></h2>
+                                        <h3>${{block.settings.price4}}</h3>
+                                    </div>
+                                {% endif %}
+                                {% if block.settings.enable_option5 == true %}
+                                    <div class="tm-pricing-pricebox">
+                                        <h2>{{block.settings.minutes5}} <span>minutes</span></h2>
+                                        <h3>${{block.settings.price5}}</h3>
+                                    </div>
+                                {% endif %}
+                            </div>
+                        </div>
+                {% endfor %}
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<!--// Pricing Area -->
+
+
+{% schema %}
+{
+    "name": "Pricing Area",
+    "settings": [
+        {
+            "type": "image_picker",
+            "id": "background_image",
+            "label": "Background Image"
+        },
+        {
+            "type": "header",
+            "content": "Left Part"
+        },
+        {
+            "type": "header",
+            "content": "Heading"
+        },
+        {
+            "type": "checkbox",
+            "id": "enable_heading_left",
+            "label": "Add Heading",
+            "default": true
+        },
+        {
+            "type": "checkbox",
+            "id": "enable_span1_left",
+            "label": "Enable First Span",
+            "default": true
+        },
+        {
+            "type": "text",
+            "id": "span1_text_left",
+            "label": "First Span Text",
+            "default": "Positive Effects",
+            "placeholder": "Put here First Span Text"
+        },
+        {
+            "type": "color",
+            "id": "span1_color_left",
+            "label": "First Span Color"
+        },
+        {
+            "type": "checkbox",
+            "id": "enable_span2_left",
+            "label": "Enable Second Span",
+            "default": true
+        },
+        {
+            "type": "text",
+            "id": "span2_text_left",
+            "label": "Second Span Text",
+            "default": "of",
+            "placeholder": "Put here Second Span Text"
+        },
+        {
+            "type": "color",
+            "id": "span2_color_left",
+            "label": "Second Span Color"
+        },
+        {
+            "type": "text",
+            "id": "heading_text_left",
+            "label": "Heading Text",
+            "default": "Dialia Registered Massage Therapy"
+        },
+        {
+            "type": "select",
+            "id": "heading_size_left",
+            "label": "Heading Size",
+            "options": [
+                {
+                    "value": "h1",
+                    "label": "Big"
+                },
+                {
+                    "value": "h2",
+                    "label": "Medium"
+                },
+                {
+                    "value": "h3",
+                    "label": "Small"
+                }
+            ],
+            "default": "h2"
+        },
+        {
+            "type": "color",
+            "id": "heading_color_left",
+            "label": "Heading Font Color"
+        },
+        {
+            "type": "header",
+            "content": "Paragraph"
+        },
+        {
+            "type": "checkbox",
+            "id": "enable_paragraph_left",
+            "label": "Add Paragraph",
+            "default": true
+        },
+        {
+            "type": "richtext",
+            "id": "paragraph_text_left",
+            "label": "Paragraph Text",
+            "default": "<p>There are remarkable benefits to be achieved through regular massage therapy treatments from a Registered Massage Therapist. Massage therapy can be an important part of your health maintenance plan.</p>"
+        },
+        {
+            "type": "range",
+            "id": "paragraph_text_size_left",
+            "min": 10,
+            "max": 25,
+            "step": 1,
+            "unit": "px",
+            "label": "Paragraph Font Size",
+            "default": 14
+        },
+        {
+            "type": "color",
+            "id": "paragraph_text_color_left",
+            "label": "Paragraph Font Color"
+        },
+        {
+            "type": "header",
+            "content": "Right Part"
+        },
+        {
+            "type": "header",
+            "content": "Heading"
+        },
+        {
+            "type": "checkbox",
+            "id": "enable_heading_right",
+            "label": "Add Heading",
+            "default": true
+        },
+        {
+            "type": "checkbox",
+            "id": "enable_span1_right",
+            "label": "Enable First Span",
+            "default": true
+        },
+        {
+            "type": "text",
+            "id": "span1_text_right",
+            "label": "First Span Text",
+            "default": "Positive Effects",
+            "placeholder": "Put here First Span Text"
+        },
+        {
+            "type": "color",
+            "id": "span1_color_right",
+            "label": "First Span Color"
+        },
+        {
+            "type": "checkbox",
+            "id": "enable_span2_right",
+            "label": "Enable Second Span",
+            "default": true
+        },
+        {
+            "type": "text",
+            "id": "span2_text_right",
+            "label": "Second Span Text",
+            "default": "of",
+            "placeholder": "Put here Second Span Text"
+        },
+        {
+            "type": "color",
+            "id": "span2_color_right",
+            "label": "Second Span Color"
+        },
+        {
+            "type": "text",
+            "id": "heading_text_right",
+            "label": "Heading Text",
+            "default": "Dialia Registered Massage Therapy"
+        },
+        {
+            "type": "select",
+            "id": "heading_size_right",
+            "label": "Heading Size",
+            "options": [
+                {
+                    "value": "h1",
+                    "label": "Big"
+                },
+                {
+                    "value": "h2",
+                    "label": "Medium"
+                },
+                {
+                    "value": "h3",
+                    "label": "Small"
+                }
+            ],
+            "default": "h2"
+        },
+        {
+            "type": "color",
+            "id": "heading_color_right",
+            "label": "Heading Font Color"
+        },
+        {
+            "type": "header",
+            "content": "Paragraph"
+        },
+        {
+            "type": "checkbox",
+            "id": "enable_paragraph_right",
+            "label": "Add Paragraph",
+            "default": true
+        },
+        {
+            "type": "richtext",
+            "id": "paragraph_text_right",
+            "label": "Paragraph Text",
+            "default": "<p>New and returning clients are encouraged to book a massage appointment online by clicking the book an appointment button</p>"
+        },
+        {
+            "type": "range",
+            "id": "paragraph_text_size_right",
+            "min": 10,
+            "max": 25,
+            "step": 1,
+            "unit": "px",
+            "label": "Paragraph Font Size",
+            "default": 14
+        },
+        {
+            "type": "color",
+            "id": "paragraph_text_color_right",
+            "label": "Paragraph Font Color"
+        }
+    ],
+    "blocks": [
+        {
+            "type": "service",
+            "name": "Service",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "service_title",
+                    "label": "Service Title",
+                    "placeholder": "Put Service Title Here"
+                },
+                {
+                    "type": "header",
+                    "content": "Pricing Options"
+                },
+                {
+                    "type": "header",
+                    "content": "Option 1"
+                },
+                {
+                    "type": "checkbox",
+                    "id": "enable_option1",
+                    "label": "Option 1",
+                    "default": true
+                },
+                {
+                    "type": "range",
+                    "id": "minutes1",
+                    "min": 30,
+                    "max": 120,
+                    "step": 15,
+                    "unit": "min",
+                    "label": "Minutes for option 1",
+                    "default": 30
+                },
+                {
+                    "type": "range",
+                    "id": "price1",
+                    "min": 50,
+                    "max": 200,
+                    "step": 5,
+                    "unit": "$",
+                    "label": "Price for option 1",
+                    "default": 50
+                },
+                {
+                    "type": "header",
+                    "content": "Option 2"
+                },
+                {
+                    "type": "checkbox",
+                    "id": "enable_option2",
+                    "label": "Option 2",
+                    "default": false
+                },
+                {
+                    "type": "range",
+                    "id": "minutes2",
+                    "min": 30,
+                    "max": 120,
+                    "step": 15,
+                    "unit": "min",
+                    "label": "Minutes for option 2",
+                    "default": 30
+                },
+                {
+                    "type": "range",
+                    "id": "price2",
+                    "min": 50,
+                    "max": 200,
+                    "step": 5,
+                    "unit": "$",
+                    "label": "Price for option 2",
+                    "default": 50
+                },
+                {
+                    "type": "header",
+                    "content": "Option 3"
+                },
+                {
+                    "type": "checkbox",
+                    "id": "enable_option3",
+                    "label": "Option 3",
+                    "default": false
+                },
+                {
+                    "type": "range",
+                    "id": "minutes3",
+                    "min": 30,
+                    "max": 120,
+                    "step": 15,
+                    "unit": "min",
+                    "label": "Minutes for option 3",
+                    "default": 30
+                },
+                {
+                    "type": "range",
+                    "id": "price3",
+                    "min": 50,
+                    "max": 200,
+                    "step": 5,
+                    "unit": "$",
+                    "label": "Price for option 3",
+                    "default": 50
+                },
+                {
+                    "type": "header",
+                    "content": "Option 4"
+                },
+                {
+                    "type": "checkbox",
+                    "id": "enable_option4",
+                    "label": "Option 4",
+                    "default": false
+                },
+                {
+                    "type": "range",
+                    "id": "minutes4",
+                    "min": 30,
+                    "max": 120,
+                    "step": 15,
+                    "unit": "min",
+                    "label": "Minutes for option 4",
+                    "default": 30
+                },
+                {
+                    "type": "range",
+                    "id": "price4",
+                    "min": 50,
+                    "max": 200,
+                    "step": 5,
+                    "unit": "$",
+                    "label": "Price for option 4",
+                    "default": 50
+                },
+                {
+                    "type": "header",
+                    "content": "Option 5"
+                },
+                {
+                    "type": "checkbox",
+                    "id": "enable_option5",
+                    "label": "Option 5",
+                    "default": false
+                },
+                {
+                    "type": "range",
+                    "id": "minutes5",
+                    "min": 30,
+                    "max": 120,
+                    "step": 15,
+                    "unit": "min",
+                    "label": "Minutes for option 5",
+                    "default": 30
+                },
+                {
+                    "type": "range",
+                    "id": "price5",
+                    "min": 50,
+                    "max": 200,
+                    "step": 5,
+                    "unit": "$",
+                    "label": "Price for option 5",
+                    "default": 50
+                }
+            ]
+        }
+    ],
+    "presets": [
+        {
+            "name": "Pricing Area",
+            "blocks": [
+                {
+                    "type": "service"
+                }
+            ]
+        }
+    ]
+}
+{% endschema %}
+
+
