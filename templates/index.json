@@ -513,11 +513,22 @@
             "client_testimonial": "<p>Quae iusto consequatur consectetur velit at nulla et enim debitis. Eligendi modi consectetur laudantium. Ut quis nobis numquam omnis suscipit eum est omnis. Explicabo ipsum accusamus consectetur animi laudantium quia<\/p>",
             "client_rating": 4
           }
+        },
+        "7b337d47-e0bf-4bd9-add9-e05cb001eeee": {
+          "type": "testimonial",
+          "settings": {
+            "client_image": "shopify:\/\/shop_images\/author-image-3.jpg",
+            "client_name": "Ottilie Wisoky",
+            "client_occupation": "Marketer",
+            "client_testimonial": "<p>Molestias dicta non laboriosam eum ut eos et. Dignissimos temporibus sit quis aut itaque vel. Maiores a est. Id ut aspernatur aliquam cumque aut ut alias accusamus. Minus aperiam fugiat tempora aut repellendus voluptatem debitis sequi.<\/p>",
+            "client_rating": 3
+          }
         }
       },
       "block_order": [
         "template--18386953830715__af205c08-bc0d-414e-8149-ce3d665883da-16795798368a4444d8-0",
-        "697138f3-688c-4e10-a6e5-3048085312a8"
+        "697138f3-688c-4e10-a6e5-3048085312a8",
+        "7b337d47-e0bf-4bd9-add9-e05cb001eeee"
       ],
       "settings": {
         "enable_heading": true,
