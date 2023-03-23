@@ -490,6 +490,30 @@
         "paragraph_text_color": "",
         "blog_posts": 6
       }
+    },
+    "af205c08-bc0d-414e-8149-ce3d665883da": {
+      "type": "testimonial-area",
+      "blocks": {
+        "template--18386953830715__af205c08-bc0d-414e-8149-ce3d665883da-16795798368a4444d8-0": {
+          "type": "testimonial",
+          "settings": {
+            "client_image": "shopify:\/\/shop_images\/author-image-1.jpg",
+            "client_name": "Penny Beaird",
+            "client_occupation": "Financer",
+            "client_testimonial": "<p>I started seeing Dr. Robinson on the recommendation of my massage therapist. Massage therapy is the science of movement and function. Massage therapy will help anybody who experiences difficulty with movement strength and pain.<\/p>",
+            "client_rating": 5
+          }
+        }
+      },
+      "block_order": [
+        "template--18386953830715__af205c08-bc0d-414e-8149-ce3d665883da-16795798368a4444d8-0"
+      ],
+      "settings": {
+        "enable_heading": true,
+        "heading_text": "Our Latest News",
+        "heading_size": "h2",
+        "heading_color": ""
+      }
     }
   },
   "order": [
@@ -499,6 +523,7 @@
     "1ef0ca1c-3745-473e-a3c0-65090e126254",
     "1feb48f4-4bf3-46a2-9ffb-1e093e0a5d84",
     "7c294c74-a935-46e1-981c-aebdd3d867df",
-    "bce976a3-633d-4f1b-b80c-73045e588a94"
+    "bce976a3-633d-4f1b-b80c-73045e588a94",
+    "af205c08-bc0d-414e-8149-ce3d665883da"
   ]
 }
