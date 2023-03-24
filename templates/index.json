@@ -545,10 +545,17 @@
           "settings": {
             "option_title": "Reducing or eliminating pain"
           }
+        },
+        "da4e7a7b-8504-4653-b5c9-d08fdfd5e399": {
+          "type": "option",
+          "settings": {
+            "option_title": "Improving joint mobility"
+          }
         }
       },
       "block_order": [
-        "template--18386953830715__163dcee1-5455-41b7-8224-379da2dc7496-16796445430049af8f-0"
+        "template--18386953830715__163dcee1-5455-41b7-8224-379da2dc7496-16796445430049af8f-0",
+        "da4e7a7b-8504-4653-b5c9-d08fdfd5e399"
       ],
       "settings": {
         "background_image": "shopify:\/\/shop_images\/bg-shape-3.png",
