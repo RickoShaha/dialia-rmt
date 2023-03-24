@@ -1,0 +1,159 @@
+ <!-- Appointment Information Area -->
+ <div class="tm-section appointment-information-area tm-padding-section bg-white">
+    <span class="bg-shape-2"><img src="{{section.settings.background_image | img_url:'master' }}" alt="background shape" loading="lazy" width height></span>
+    <div class="container">
+        <div class="row mt-50-reverse">
+            <div class="col-lg-6 mt-50">
+                <div class="tm-information">
+                    <div class="tm-information-timing">
+                        <h5>Opening Hours</h5>
+                        <ul>
+                            {% for block in section.blocks %}
+                                {% case block.type %}
+                                    {% when 'opening_hours' %}
+                                        <li>{{block.settings.day_options}} <span>{{block.settings.time_options}}</span></li>                                 
+                                {% endcase %}
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    <div class="tm-information-contact">
+                        <h5>Contact Details</h5>
+                        <ul>
+                            <li><b>Address </b>{{section.settings.address}}</li>
+                            <li><b>Phone </b>{{section.settings.phone}}</li>
+                            <li><b>Email </b>{{section.settings.email}} {% if section.settings.enable_second_email == true %}
+                                <br>{{section.settings.second_email}}
+                            {% endif %} </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 mt-50">
+                <div class="tm-appointment">
+                    <h2>Make an Appointment</h2>
+                    <form action="#" class="tm-form">
+                        <div class="tm-form-inner">
+                            <div class="tm-form-field tm-form-fieldhalf">
+                                <input type="text" required="required" placeholder="Name*">
+                            </div>
+                            <div class="tm-form-field tm-form-fieldhalf">
+                                <input type="email" required="required" placeholder="Email*">
+                            </div>
+                            <div class="tm-form-field tm-form-fieldhalf">
+                                <select name="select-services">
+                                    <option value="0">Select Service</option>
+                                    {% assign variable = 'a,b,c,d,e,f' | split: ',' %}
+                                    {% for block in section.blocks%}
+                                        <option value={{variable[forloop.index]}}>{{block.settings.option_title}}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                            <div class="tm-form-field tm-form-fieldhalf">
+                                <input type="text" required="required" data-toggle="datepicker" placeholder="Select Date">
+                            </div>
+                            <div class="tm-form-field">
+                                <textarea name="message" cols="30" rows="5" placeholder="Message"></textarea>
+                            </div>
+                            <div class="tm-form-field">
+                                <button type="submit" class="tm-button">Submit</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--// Appointment Information Area -->
+
+{% schema %}
+    {
+        "name": "Appointment",
+        "settings": [
+            {
+                "type": "image_picker",
+                "id": "background_image",
+                "label": "Background Image"
+            },
+            {
+                "type": "text",
+                "id": "address",
+                "label": "Address",
+                "default" : "Sample Address",
+                "placeholder": "Put your Address here"
+            },
+            {
+                "type": "text",
+                "id": "phone",
+                "label": "Phone",
+                "default" : "Sample Phone Number",
+                "placeholder": "Put your Phone here"
+            },
+            {
+                "type": "text",
+                "id": "email",
+                "label": "E-mail",
+                "default" : "Sample E-mail",
+                "placeholder": "Put your E-mail here"
+            },
+            {
+                "type": "checkbox",
+                "id": "enable_second_email",
+                "label": "Add Second Email",
+                "default": false,
+                "info": "Checking this enables adding options for second E-mail"
+            },
+            {
+                "type": "text",
+                "id": "second_email",
+                "label": "Second E-mail",
+                "default" : "Sample Secod E-mail",
+                "placeholder": "Put your Second E-mail here"
+            }
+        ],
+        "blocks": [
+            {
+                "type": "option",
+                "name": "Option",
+                "settings": [
+                    {
+                        "type": "text",
+                        "id": "option_title",
+                        "label": "Option Title",
+                        "placeholder": "Put here option title"
+                    }
+                ]
+            },
+            {
+                "type": "opening_hours",
+                "name": "Opening Hours",
+                "settings": [
+                    {
+                        "type": "text",
+                        "id": "day_options",
+                        "label": "Day Options",
+                        "placeholder": "Put here day options"
+                    },
+                    {
+                        "type": "text",
+                        "id": "time_options",
+                        "label": "Time Options",
+                        "placeholder": "Put here time options"
+                    }
+                ]
+            }
+        ],
+        "presets": [
+            {
+                "name": "Appointment",
+                "blocks": [
+                    {
+                        "type": "option"
+                    }
+                ]
+            }
+        ]
+    }
+{% endschema %}
+
+
