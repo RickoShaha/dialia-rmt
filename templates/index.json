@@ -575,6 +575,27 @@
           "settings": {
             "option_title": "Post-surgical rehabilitation"
           }
+        },
+        "62f55d4c-4967-4e29-a434-2af447010237": {
+          "type": "opening_hours",
+          "settings": {
+            "day_options": "Monday - Friday",
+            "time_options": "12:00 - 17:00"
+          }
+        },
+        "c73aa510-a9a0-4997-914d-b1a2078ebd65": {
+          "type": "opening_hours",
+          "settings": {
+            "day_options": "Saturday",
+            "time_options": "15:00 - 18:00"
+          }
+        },
+        "d1c3c381-5c97-4191-bca6-779dd7e73a8e": {
+          "type": "opening_hours",
+          "settings": {
+            "day_options": "Sunday",
+            "time_options": "Closed"
+          }
         }
       },
       "block_order": [
@@ -583,7 +604,10 @@
         "de6db99d-2f03-4423-a989-09ff615d4712",
         "39ba0ccc-495a-46ba-ac77-251c434faa28",
         "3f8296a2-8d4c-42f7-a42d-e53339949fcd",
-        "4a4de268-5270-47cc-a5bd-79e0b7e9df4f"
+        "4a4de268-5270-47cc-a5bd-79e0b7e9df4f",
+        "62f55d4c-4967-4e29-a434-2af447010237",
+        "c73aa510-a9a0-4997-914d-b1a2078ebd65",
+        "d1c3c381-5c97-4191-bca6-779dd7e73a8e"
       ],
       "settings": {
         "background_image": "shopify:\/\/shop_images\/bg-shape-3.png",
