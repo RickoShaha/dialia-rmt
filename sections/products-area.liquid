@@ -1,0 +1,180 @@
+            <!--  Products Area -->
+            <div class="tm-section products-area tm-padding-section bg-white">
+                <span class="bg-shape-right"><img src="{{section.settings.background_image | img_url:'master'}}" alt="background shape" loading="lazy" width height></span>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-xl-6 col-lg-8 col-md-10 col-12">
+                            <div class="tm-section-title text-center">
+                                {% if block.settings.enable_heading ==  true %}
+                                    <{{ block.settings.heading_size }} style="color:{{ block.settings.heading_color }}">{{block.settings.heading_text}}</{{block.settings.heading_size}}>    
+                                {% endif %}
+                                {% if block.settings.enable_paragraph == true %}
+                                    <p style="font-size:{{block.settings.paragraph_text_size}}px; color:{{block.settings.paragraph_text_color}}">{{block.settings.paragraph_text}}</p>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row product-slider-active tm-slider-arrow tm-slider-arrow-hovervisible">
+
+                        {% comment %} <div>{{section.settings.collection}}</div> {% endcomment %}
+
+                        {% for product in collections[section.settings.collections].products %}
+                        <!-- Single Product -->
+                        <div class="col">
+                            <div class="tm-product">
+                                <div class="tm-product-image">
+                                    <a class="tm-product-imagelink" href="product-details.html">
+                                        <img src="{{product.featured_image | img_url: 'master'}}" alt="product image" loading="lazy" width height>
+                                    </a>
+                                    <ul class="tm-product-actions">
+                                        <li><button type="button" data-fancybox data-src="#tm-product-quickview"><i
+                                                    class="zmdi zmdi-eye"></i></button></li>
+                                        <li><a href="cart.html"><i class="zmdi zmdi-shopping-cart"></i></a></li>
+                                        <li><a href="cart.html"><i class="zmdi zmdi-favorite"></i></a></li>
+                                    </ul>
+                                </div>
+                                <div class="tm-product-content">
+                                    <h5 class="tm-product-title"><a href="product-details.html">{{product.title}}</a></h5>
+                                    <div class="tm-product-rating">
+                                        <span class="active"><i class="zmdi zmdi-star"></i></span>
+                                        <span class="active"><i class="zmdi zmdi-star"></i></span>
+                                        <span class="active"><i class="zmdi zmdi-star"></i></span>
+                                        <span class="active"><i class="zmdi zmdi-star"></i></span>
+                                        <span class="active"><i class="zmdi zmdi-star"></i></span>
+                                    </div>
+                                    <h6 class="tm-product-price">${{product.price}} <del>${{product.compare_at_price}}</del></h6>
+                                </div>
+                            </div>
+                        </div>
+                        <!--// Single Product -->    
+                        {% endfor %} 
+                        
+
+                        {% comment %} <!-- Single Product -->
+                        <div class="col">
+                            <div class="tm-product">
+                                <div class="tm-product-image">
+                                    <a class="tm-product-imagelink" href="product-details.html">
+                                        <img src="" alt="product image" loading="lazy" width height>
+                                    </a>
+                                    <ul class="tm-product-actions">
+                                        <li><button type="button" data-fancybox data-src="#tm-product-quickview"><i
+                                                    class="zmdi zmdi-eye"></i></button></li>
+                                        <li><a href="cart.html"><i class="zmdi zmdi-shopping-cart"></i></a></li>
+                                        <li><a href="cart.html"><i class="zmdi zmdi-favorite"></i></a></li>
+                                    </ul>
+                                </div>
+                                <div class="tm-product-content">
+                                    <h5 class="tm-product-title"><a href="product-details.html">Cosmetology Essential
+                                            oil</a></h5>
+                                    <div class="tm-product-rating">
+                                        <span class="active"><i class="zmdi zmdi-star"></i></span>
+                                        <span class="active"><i class="zmdi zmdi-star"></i></span>
+                                        <span class="active"><i class="zmdi zmdi-star"></i></span>
+                                        <span class="active"><i class="zmdi zmdi-star"></i></span>
+                                        <span class="active"><i class="zmdi zmdi-star"></i></span>
+                                    </div>
+                                    <h6 class="tm-product-price">$99.99 <del>$120.00</del></h6>
+                                </div>
+                            </div>
+                        </div>
+                        <!--// Single Product --> {% endcomment %}
+
+                    </div>
+                </div>
+            </div>
+            <!--//  Products Area -->
+
+{% schema %}
+    {
+        "name": "Products Area",
+        "settings": [
+            {
+                "type": "image_picker",
+                "id": "background_image",
+                "label": "Background Image"
+            },
+            {
+                "type": "header",
+                "content": "Heading"
+            },
+            {
+                "type": "checkbox",
+                "id": "enable_heading",
+                "label": "Add Heading",
+                "default": true
+            },
+            {
+                "type": "text",
+                "id": "heading_text",
+                "label": "Heading Text"
+            },
+            {
+                "type": "select",
+                "id": "heading_size",
+                "label": "Heading Size",
+                "options": [
+                    {
+                        "value": "h1",
+                        "label": "Big"
+                    },
+                    {
+                        "value": "h2",
+                        "label": "Medium"
+                    },
+                    {
+                        "value": "h3",
+                        "label": "Small"
+                    }
+                ],
+                "default": "h1"
+            },
+            {
+                "type": "color",
+                "id": "heading_color",
+                "label": "Heading Font Color"
+            },
+            {
+                "type": "header",
+                "content": "Paragraph"
+            },
+            {
+                "type": "checkbox",
+                "id": "enable_paragraph",
+                "label": "Add Paragraph",
+                "default": true
+            },
+            {
+                "type": "richtext",
+                "id": "paragraph_text",
+                "label": "Paragraph Text",
+                "default": "<p></p>"
+            },
+            {
+                "type": "range",
+                "id": "paragraph_text_size",
+                "min": 10,
+                "max": 25,
+                "step": 1,
+                "unit": "px",
+                "label": "Paragraph Font Size",
+                "default": 14
+            },
+            {
+                "type": "color",
+                "id": "paragraph_text_color",
+                "label": "Paragraph Font Color"
+            },
+            {
+                "type": "collection",
+                "id": "collections",
+                "label": "Product Collections to Show"
+            }
+        ],
+        "presets": [
+            {
+                "name": "Products Area"
+            }
+        ]
+    }
+{% endschema %}
