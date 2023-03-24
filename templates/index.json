@@ -627,10 +627,10 @@
         "heading_size": "h2",
         "heading_color": "",
         "enable_paragraph": true,
-        "paragraph_text": "",
+        "paragraph_text": "<p>Lorem ipsum dolor sit amet, in quodsi vulputate pro. Ius illum vocent mediocritatem an cule dicta iriure at phaedrum. <\/p>",
         "paragraph_text_size": 14,
         "paragraph_text_color": "",
-        "collections": ""
+        "collections": "oils"
       }
     }
   },
