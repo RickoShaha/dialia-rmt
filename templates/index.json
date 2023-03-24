@@ -536,6 +536,28 @@
         "paragraph_text_color": "",
         "blog_posts": 6
       }
+    },
+    "163dcee1-5455-41b7-8224-379da2dc7496": {
+      "type": "appointment-information-area",
+      "blocks": {
+        "template--18386953830715__163dcee1-5455-41b7-8224-379da2dc7496-16796445430049af8f-0": {
+          "type": "option",
+          "settings": {
+            "option_title": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--18386953830715__163dcee1-5455-41b7-8224-379da2dc7496-16796445430049af8f-0"
+      ],
+      "settings": {
+        "background_image": "shopify:\/\/shop_images\/bg-shape-3.png",
+        "address": "2726 Avenue Papineau Montreal, QC, Canada",
+        "phone": "1-800-915-6270",
+        "email": "info@example.com",
+        "enable_second_email": true,
+        "second_email": "support@dialiarmttherapy.com"
+      }
     }
   },
   "order": [
@@ -546,6 +568,7 @@
     "1feb48f4-4bf3-46a2-9ffb-1e093e0a5d84",
     "7c294c74-a935-46e1-981c-aebdd3d867df",
     "af205c08-bc0d-414e-8149-ce3d665883da",
-    "bce976a3-633d-4f1b-b80c-73045e588a94"
+    "bce976a3-633d-4f1b-b80c-73045e588a94",
+    "163dcee1-5455-41b7-8224-379da2dc7496"
   ]
 }
