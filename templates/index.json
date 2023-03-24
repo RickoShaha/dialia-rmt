@@ -551,11 +551,39 @@
           "settings": {
             "option_title": "Improving joint mobility"
           }
+        },
+        "de6db99d-2f03-4423-a989-09ff615d4712": {
+          "type": "option",
+          "settings": {
+            "option_title": "Circulatory problems"
+          }
+        },
+        "39ba0ccc-495a-46ba-ac77-251c434faa28": {
+          "type": "option",
+          "settings": {
+            "option_title": "Improving lymphatic drainage"
+          }
+        },
+        "3f8296a2-8d4c-42f7-a42d-e53339949fcd": {
+          "type": "option",
+          "settings": {
+            "option_title": "Reducing muscular tension"
+          }
+        },
+        "4a4de268-5270-47cc-a5bd-79e0b7e9df4f": {
+          "type": "option",
+          "settings": {
+            "option_title": "Post-surgical rehabilitation"
+          }
         }
       },
       "block_order": [
         "template--18386953830715__163dcee1-5455-41b7-8224-379da2dc7496-16796445430049af8f-0",
-        "da4e7a7b-8504-4653-b5c9-d08fdfd5e399"
+        "da4e7a7b-8504-4653-b5c9-d08fdfd5e399",
+        "de6db99d-2f03-4423-a989-09ff615d4712",
+        "39ba0ccc-495a-46ba-ac77-251c434faa28",
+        "3f8296a2-8d4c-42f7-a42d-e53339949fcd",
+        "4a4de268-5270-47cc-a5bd-79e0b7e9df4f"
       ],
       "settings": {
         "background_image": "shopify:\/\/shop_images\/bg-shape-3.png",
