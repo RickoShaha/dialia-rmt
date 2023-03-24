@@ -5,11 +5,11 @@
                     <div class="row justify-content-center">
                         <div class="col-xl-6 col-lg-8 col-md-10 col-12">
                             <div class="tm-section-title text-center">
-                                {% if block.settings.enable_heading ==  true %}
-                                    <{{ block.settings.heading_size }} style="color:{{ block.settings.heading_color }}">{{block.settings.heading_text}}</{{block.settings.heading_size}}>    
+                                {% if section.settings.enable_heading ==  true %}
+                                    <{{ section.settings.heading_size }} style="color:{{ section.settings.heading_color }}">{{section.settings.heading_text}}</{{section.settings.heading_size}}>    
                                 {% endif %}
-                                {% if block.settings.enable_paragraph == true %}
-                                    <p style="font-size:{{block.settings.paragraph_text_size}}px; color:{{block.settings.paragraph_text_color}}">{{block.settings.paragraph_text}}</p>
+                                {% if section.settings.enable_paragraph == true %}
+                                    <p style="font-size:{{section.settings.paragraph_text_size}}px; color:{{section.settings.paragraph_text_color}}">{{section.settings.paragraph_text}}</p>
                                 {% endif %}
                             </div>
                         </div>
@@ -127,7 +127,7 @@
                         "label": "Small"
                     }
                 ],
-                "default": "h1"
+                "default": "h2"
             },
             {
                 "type": "color",
