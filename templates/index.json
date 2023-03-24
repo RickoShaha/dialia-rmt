@@ -477,20 +477,6 @@
         "paragraph_text_color_right": ""
       }
     },
-    "bce976a3-633d-4f1b-b80c-73045e588a94": {
-      "type": "latest-blog-area",
-      "settings": {
-        "enable_heading": true,
-        "heading_text": "Our Latest News",
-        "heading_size": "h2",
-        "heading_color": "",
-        "enable_paragraph": true,
-        "paragraph_text": "<p>Lorem ipsum dolor sit amet, in quodsi vulputate pro. Ius illum vocent mediocritatem an cule dicta iriure at phaedrum. <\/p>",
-        "paragraph_text_size": 14,
-        "paragraph_text_color": "",
-        "blog_posts": 6
-      }
-    },
     "af205c08-bc0d-414e-8149-ce3d665883da": {
       "type": "testimonial-area",
       "blocks": {
@@ -536,6 +522,20 @@
         "heading_size": "h2",
         "heading_color": ""
       }
+    },
+    "bce976a3-633d-4f1b-b80c-73045e588a94": {
+      "type": "latest-blog-area",
+      "settings": {
+        "enable_heading": true,
+        "heading_text": "Our Latest News",
+        "heading_size": "h2",
+        "heading_color": "",
+        "enable_paragraph": true,
+        "paragraph_text": "<p>Lorem ipsum dolor sit amet, in quodsi vulputate pro. Ius illum vocent mediocritatem an cule dicta iriure at phaedrum. <\/p>",
+        "paragraph_text_size": 14,
+        "paragraph_text_color": "",
+        "blog_posts": 6
+      }
     }
   },
   "order": [
@@ -545,7 +545,7 @@
     "1ef0ca1c-3745-473e-a3c0-65090e126254",
     "1feb48f4-4bf3-46a2-9ffb-1e093e0a5d84",
     "7c294c74-a935-46e1-981c-aebdd3d867df",
-    "bce976a3-633d-4f1b-b80c-73045e588a94",
-    "af205c08-bc0d-414e-8149-ce3d665883da"
+    "af205c08-bc0d-414e-8149-ce3d665883da",
+    "bce976a3-633d-4f1b-b80c-73045e588a94"
   ]
 }
