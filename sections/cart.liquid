@@ -1,0 +1,122 @@
+<style>
+    .empty-cart{
+        margin: 10px auto;
+        max-width: 300px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    h1{
+        font-size: 30px;
+    }
+</style>
+
+{% if cart.item_count>0 %}
+    <!-- Shopping Cart Area -->
+    <div class="tm-section shopping-cart-area bg-white tm-padding-section">
+        <div class="container">
+
+            <!-- Shopping Cart Table -->
+            <div class="tm-cart-table table-responsive">
+                <form action="{{routes.cart_url}}" method="POST" novalidate>
+                    <table class="table table-bordered mb-0">
+                        <thead>
+                            <tr>
+                                <th class="tm-cart-col-image" scope="col">Image</th>
+                                <th class="tm-cart-col-productname" scope="col">Product</th>
+                                <th class="tm-cart-col-price" scope="col">Price</th>
+                                <th class="tm-cart-col-quantity" scope="col">Quantity</th>
+                                <th class="tm-cart-col-total" scope="col">Total</th>
+                                <th class="tm-cart-col-remove" scope="col">Remove</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for item in cart.items %}
+                                <tr>
+                                    <td>
+                                        <a href="{{item.url}}" class="tm-cart-productimage">
+                                            <img src="{{item.image | img_url:'small'}}" alt="{{item.title | escape}}" loading="lazy" width height>
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <a href="{{item.url}}" class="tm-cart-productname">{{item.product.title | truncatewords: 5, '...'}}</a>
+                                        <span>{{item.variant.title}}</span>
+                                    </td>
+                                    <td class="tm-cart-price">{{item.original_price | money}}</td>
+                                    <td>
+                                        <div class="tm-quantitybox">
+                                            <input type="number" name="updates[]" value="{{item.quantity}}" min="1" id="updates_{{forloop.index}}">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <span class="tm-cart-totalprice">{{item.line_price | money}}</span>
+                                    </td>
+                                    <td>
+                                        <a href="{{routes.cart_change_url}}?line={{forloop.index}}&quantity=0" class="tm-cart-removeproduct"><i class="zmdi zmdi-close"></i></a>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+
+                        </tbody>
+                    </table>
+                                    <!-- Shopping Cart Content -->
+                <div class="tm-cart-bottomarea">
+                    <div class="row">
+                        <div class="col-lg-8 col-md-6">
+                            <div class="tm-buttongroup">
+                                <a href="{{routes.all_products_collection_url}}" class="tm-button">Continue Shopping <b></b></a>
+                                <button type="submit" name="update" class="tm-button">Update Cart <b></b></button>
+                            </div>
+                            
+                                <label for="coupon-field">Have a coupon code?</label>
+                                <input type="text" id="coupon-field" placeholder="Enter coupon code" required="required">
+                                <button type="submit" class="tm-button">Submit <b></b></button>
+                            
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="tm-cart-pricebox">
+                                <h2>Cart Totals</h2>
+                                <div class="table-responsive">
+                                    <table class="table table-borderless">
+                                        <tbody>
+                                            <tr class="tm-cart-pricebox-subtotal">
+                                                <td>Cart Subtotal</td>
+                                                <td>{{cart.total_price | money}}</td>
+                                            </tr>
+                                            <tr class="tm-cart-pricebox-shipping">
+                                                <td>(+) Shipping Charge</td>
+                                                <td>{{shipping_method.price | money}}</td>
+                                            </tr>
+                                            <tr class="tm-cart-pricebox-total">
+                                                <td>Total</td>
+                                                <td>{{cart.total_price | plus: shipping_method.price |  money}}</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <button type="submit" name="checkout" class="tm-button">Proceed To Checkout <b></b></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--// Shopping Cart Content -->
+                </form>
+            </div>
+                <!--// Shopping Cart Table -->
+            
+
+                
+
+        </div>
+    </div>
+    <!--// Shopping Cart Area -->
+{% else %}
+    <div class="empty-cart">
+        <div class="text-center">
+            <h1>Your Cart is Empty</h1>
+            <a href="{{routes.all_products_collection_url}}" class="tm-button">Continue Shopping <b></b></a>
+        </div>
+    </div>
+{% endif %}
+        
+        

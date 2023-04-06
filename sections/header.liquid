@@ -26,12 +26,12 @@
                         {% for link in section.settings.menu.links %}
                           {% if link.links != blank %}
                             <li class="tm-navigation-dropdown">
-                                <a href="{{ link.url }}">{{ link.title }}<i class="fa-solid fa-angle-down"></i></a>
+                                <a href="{{ link.url }}">{{ link.title }}</a>
                                 <ul>
                                   {% for sublink in linklists[link.handle].links %}
                                     {% if sublink.links != blank %}
                                         <li>
-                                            <a href="{{ sublink.url }}"> {{sublink.title}}<i class="fa-solid fa-angle-down"></i>
+                                            <a href="{{ sublink.url }}"> {{sublink.title}}
                                                 <ul>
                                                     {% for sublink2 in linklists[sublink.handle].links %}
                                                         <li><a href="{{sublink2.url}}">{{sublink2.title}}</a></li>

@@ -23,7 +23,7 @@
                         <div class="col">
                             <div class="tm-product">
                                 <div class="tm-product-image">
-                                    <a class="tm-product-imagelink" href="product-details.html">
+                                    <a class="tm-product-imagelink" href="{{product.url}}">
                                         <img src="{{product.featured_image | img_url: 'master'}}" alt="product image" loading="lazy" width height>
                                     </a>
                                     <ul class="tm-product-actions">
@@ -42,7 +42,10 @@
                                         <span class="active"><i class="zmdi zmdi-star"></i></span>
                                         <span class="active"><i class="zmdi zmdi-star"></i></span>
                                     </div>
-                                    <h6 class="tm-product-price">${{product.price}} <del>${{product.compare_at_price}}</del></h6>
+                                    <h6 class="tm-product-price">{{product.price | money}}
+                                    {% if product.compare_at_price %}
+                                        <del>{{product.compare_at_price | money}}</del>
+                                    {% endif %} </h6>
                                 </div>
                             </div>
                         </div>
