@@ -157,7 +157,7 @@
                             <div class="single-widget widget-popularproduct">
                                 <h5 class="widget-title">Popular Product</h5>
                                 <ul>
-                                    {% assign collection.sort_by = 'best-selling' %}
+                                    {% assign renamed_variable_collection_2e_sort_by = 'best-selling' %}
                                     {%- assign products = collection.products -%}
                                     {%- for product in products limit: 3 %}
                                         <li>
@@ -225,4 +225,13 @@
             console.log(maxPrice);
             console.log(url + '?' + params.toString());
           };
-    </script>
+    </script>{%- comment -%}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% assign collection.sort_by = 'best-selling' %}"
+  to: "{% assign renamed_variable_collection_2e_sort_by = 'best-selling' %}"
+  position: 11121..11189
+{%- endcomment -%}
